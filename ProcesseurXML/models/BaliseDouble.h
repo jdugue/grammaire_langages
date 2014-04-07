@@ -1,30 +1,31 @@
-#ifndef ELEMENT_BALISE_H
-#define ELEMENT_BALISE_H
+#ifndef BALISE_DOUBLE_H
+#define BALISE_DOUBLE_H
 
 #include "Element.h"
 #include <list>
+#include <string>
 #include "Attribut.h"
 
-class ElementBalise: public Element
+class BaliseDouble: public Balise
 {
-public:
-    ElementBalise();
-    list<Attribut *> *getLesAttributs();
-    list<Element *> *getLesElements();
-    char *getName();
-    char *getType();
-    ElementBalise(char *&, list<Element *> *, list<Attribut *> *&, char *);
-    ElementBalise (ElementBalise& elemBalise);  //constructeur de copie   
-    ~ElementBalise();
-    char *toString();
-    void addElement(list<Element*>*);
-    list<Element*> *getElementsByName(char* name);
+	public:
+		BaliseDouble();
+		BaliseDouble (BaliseDouble& elemBalise);  //constructeur de copie   
+		list<Attribut *> *getAttributs();
+		list<Element *> *getElements();
+		string getNom();
+		string getType();
+		BaliseDouble(string &, list<Element *> *, list<Attribut *> *&, string );
+		~BaliseDouble();
+		string toString();
+		void addElement(list<Element*>*);
+		list<Element*> *getElementsByName(string name);
 
-private:
-    char* type;
-    char *nom;
-    list<Attribut *> *lesAttributs;
-    list<Element *> *lesElements;
+	private:
+		string type;
+		string nom;
+		list<Attribut *> *lesAttributs;
+		list<Element *> *lesElements;
 };
 
 #endif

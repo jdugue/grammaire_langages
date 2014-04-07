@@ -1,13 +1,13 @@
-#include "ElementBalise.h"
+#include "BaliseDouble.h"
 
-ElementBalise::ElementBalise(): Element()
+BaliseDouble::BaliseDouble(): Element()
 {
     this->lesAttributs = new list<Attribut *>();
     // this->lesElements = (list<Element*>**) calloc(2, sizeof(list<Element*>*));
     this->lesElements = new list<Element *>();
 }
 
-ElementBalise::ElementBalise(char *&nom, list<Element *> *elements, list<Attribut *> *&attributs, char *type): Element()
+BaliseDouble::BaliseDouble(string &nom, list<Element *> *elements, list<Attribut *> *&attributs, string type): Element()
 {
     this->lesAttributs = attributs;
     this->lesElements = elements;
@@ -15,7 +15,7 @@ ElementBalise::ElementBalise(char *&nom, list<Element *> *elements, list<Attribu
     this->type = type;
 }
 
-ElementBalise::ElementBalise(ElementBalise &elemBalise): Element((Element)elemBalise)
+BaliseDouble::BaliseDouble(BaliseDouble &elemBalise): Element((Element)elemBalise)
 {
 
     this->lesAttributs = elemBalise.lesAttributs;
@@ -24,28 +24,28 @@ ElementBalise::ElementBalise(ElementBalise &elemBalise): Element((Element)elemBa
     this->type = elemBalise.type;
 }
 
-list<Element *> *ElementBalise::getLesElements()
+list<Element *> *BaliseDouble::getElements()
 {
     // cout << "oukay" << endl;
     return lesElements;
 }
 
-list<Attribut *> *ElementBalise::getLesAttributs()
+list<Attribut *> *BaliseDouble::getAttributs()
 {
     return lesAttributs;
 }
 
-char *ElementBalise::getName()
+string BaliseDouble::getName()
 {
     return nom;
 }
 
-char *ElementBalise::getType()
+string BaliseDouble::getType()
 {
     return type;
 }
 
-list<Element *> *ElementBalise::getElementsByName(char *name)
+list<Element *> *BaliseDouble::getElementsByName(string name)
 {
     list<Element *> *elementsOk = new list<Element *>();
     for (list<Element *>::iterator it = this->lesElements->begin(); it != this->lesElements->end(); it++)
@@ -57,13 +57,13 @@ list<Element *> *ElementBalise::getElementsByName(char *name)
     }
     return elementsOk;
 }
-ElementBalise::~ElementBalise()
+BaliseDouble::~BaliseDouble()
 {
     //delete lesAttributs;
     //delete nom;
 }
 
-char *ElementBalise::toString()
+string BaliseDouble::toString()
 {
     // cout << "ELEMENT_BALISE_TOSTRING" << endl;
     // cout<< "J'ai "<< this->lesElements[0]->size()<<this->lesElements[1]->size()<<" enfants."<<endl;
@@ -106,6 +106,6 @@ char *ElementBalise::toString()
     return cstr;
 }
 
-void ElementBalise::addElement(list<Element*>* tutu){
-    this->lesElements->insert(this->lesElements->begin(),tutu->begin(),tutu->end());
+void BaliseDouble::addElement(list<Element*>* elem){
+    this->lesElements->insert(this->lesElements->begin(),elem->begin(),elem->end());
 }

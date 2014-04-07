@@ -3,36 +3,36 @@
 #include <iostream>
 using namespace std;
 
-Attribut::Attribut(char *pName, char *pValue)
+Attribut::Attribut(string pNom, string pValeur)
 {
-    this->name = pName;
-    this->value = pValue;
+    this->nom = pNom;
+    this->valeur = pValeur;
 }
 
-Attribut::Attribut(const Attribut& osef)
+Attribut::Attribut(const Attribut& attr)
 {
-    // this->value = osef.getValue();
-    // this->name = osef.getName();
-    cout<< "GET AWAY FROM HERE, YOU PERV"<<endl<<endl;
+    // this->valeur = attr.getValeur();
+    // this->nom = attr.getNom();
+    cout<< "..."<<endl<<endl;
 }
 
-char *Attribut::getValue()
+string Attribut::getValeur()
 {
-    return this->value;
+    return this->valeur;
 }
 
-char *Attribut::getName()
+string Attribut::getNom()
 {
-    return this->name;
+    return this->nom;
 }
 
 Attribut::~Attribut()
 {
-    delete(this->name);
-    delete(this->value);
+    delete(this->nom);
+    delete(this->valeur);
 }
 
-char *Attribut::toString()
+string Attribut::toString()
 {
-    return strcat(strcat(strcat(this->name, "=\""), this->value), "\"");
+    return strcat(strcat(strcat(this->nom, "=\""), this->valeur), "\"");
 }

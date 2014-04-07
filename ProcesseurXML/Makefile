@@ -1,10 +1,40 @@
-all: commun
-commun: *.l *.y *.cpp *.h
+COMP = g++
+EDL = g++
+ECHO = echo
+RM = rm
+
+ALL = All
+TEST = test
+COMMUN = commun
+EFFACE = clean
+LIBS = $(PATH_LIB)
+
+OBJETS =   $(wildcard ./*.cpp) $(wildcard ./*.h) $(wildcard ./model/*.h) $(wildcard ./model/*.cpp)
+# $(wildcard ./*.l)
+# $(wildcard ./*.y)
+	# g++ -std=c++11 -g -DYYDEBUG -o xmltool main.cpp xml.tab.c lex.xml.c
+
+${ALL}:${COMMUN}
+${COMMUN}:${OBJETS}
 	flex -P xml xml.l
 	bison -p xml --debug --verbose --defines=xml.tab.h xml.y
-	g++ -std=c++11 -g -DYYDEBUG -o xmltool main.cpp xml.tab.c lex.xml.c
+	${EDL} -std=c++11 -g -DYYDEBUG -o xmltool ${OBJETS} 
 	touch commun
-clean:
-	-rm -rf xml.tab.c lex.xml.c xml.tab.h xml.output xmltool commun
-test:
+${EFFACE}:
+	${RM} -rf xml.tab.c lex.xml.c xml.tab.h xml.output xmltool commun
+${TEST}:
 	cd Tests; ./mktest.sh
+
+%.o:%.cpp 
+	${COMP} -c $<
+
+# all: commun
+# commun: *.l *.y *.cpp *.h
+# 	flex -P xml xml.l
+# 	bison -p xml --debug --verbose --defines=xml.tab.h xml.y
+# 	g++ -std=c++11 -g -DYYDEBUG -o xmltool main.cpp xml.tab.c lex.xml.c
+# 	touch commun
+# clean:
+# 	-rm -rf xml.tab.c lex.xml.c xml.tab.h xml.output xmltool commun
+# test:
+# 	cd Tests; ./mktest.sh
