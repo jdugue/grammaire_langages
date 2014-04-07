@@ -1,4 +1,4 @@
-#include "BaliseVide.h"
+#include "Balise.h"
 
 Balise::Balise():Element()
 {
@@ -7,21 +7,21 @@ Balise::Balise():Element()
 
 }
 
-Balise::Balise(std::string pNom, std::list<Attribut*> *attributs):Element()
+Balise::Balise(std::string& pNom, std::list<Attribut*> *attributs):Element()
 {
-	nom = pNom;
+	nom (pNom);
 	this->attributs = attributs;
 
 }
 
-BaliseVide::BaliseVide(BaliseVide &baliseVide): Element((Element)baliseVide)
+Balise::Balise(BaliseVide &baliseVide): Element((Element)baliseVide)
 {
 	//TODO
     //this->attributs = elemBaliseOrph.lesAttributs;
     //this->nom = elemBaliseOrph.nom;
 }
 
-std::string BaliseVide::getNom()
+std::string Balise::getNom()
 {
 	return nom;
 }
@@ -31,13 +31,9 @@ std::list<Attribut *> * BaliseVide::getAttributs()
 	return attributs;
 }
 
-BaliseVide::~BaliseVide()
+std::string Balise::toString()
 {
-    
-}
-
-std::string BaliseVide::toString()
-{
+	/*
     string buffer(format("<"));
 
     buffer.append(this->type);
@@ -53,5 +49,6 @@ std::string BaliseVide::toString()
 
     char *cstr = new char[buffer.length() + 1];
     strcpy(cstr, buffer.c_str());
-    return cstr;
+    */
+    return 0;
 }

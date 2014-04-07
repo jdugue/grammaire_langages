@@ -46,6 +46,7 @@ BaliseDouble::~BaliseDouble()
 
 string BaliseDouble::toString()
 {
+	/*
     // cout << "ELEMENT_BALISE_TOSTRING" << endl;
     // cout<< "J'ai "<< this->lesElements[0]->size()<<this->lesElements[1]->size()<<" enfants."<<endl;
     string buffer(format("<"));
@@ -84,7 +85,8 @@ string BaliseDouble::toString()
 
     char *cstr = new char[buffer.length() + 1];
     strcpy(cstr, buffer.c_str());
-    return cstr;
+    */
+    return 0;
 }
 
 void BaliseDouble::addElement(list<Element*>* elem){

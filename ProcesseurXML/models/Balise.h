@@ -5,10 +5,10 @@
 #include <list>
 #include <string>
 
-class BaliseVide: public Element
+class Balise: public Element
 {
 public:
-    Balise(string nom, list<Attribut*>*);
+    Balise(string&, list<Attribut*>*);
     ~Balise();
     Balise(Balise& balise);
     
