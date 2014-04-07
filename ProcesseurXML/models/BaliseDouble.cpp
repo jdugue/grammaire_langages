@@ -1,54 +1,35 @@
 #include "BaliseDouble.h"
 
-BaliseDouble::BaliseDouble(): Element()
+BaliseDouble::BaliseDouble(): Balise()
 {
-    this->lesAttributs = new list<Attribut *>();
     // this->lesElements = (list<Element*>**) calloc(2, sizeof(list<Element*>*));
-    this->lesElements = new list<Element *>();
+    this->elements = new list<Element *>();
 }
 
-BaliseDouble::BaliseDouble(string &nom, list<Element *> *elements, list<Attribut *> *&attributs, string type): Element()
+BaliseDouble::BaliseDouble(string &nom, list<Element *> *elements, list<Attribut *> *attributs): Balise(nom, attributs)
 {
-    this->lesAttributs = attributs;
-    this->lesElements = elements;
-    this->nom = nom;
-    this->type = type;
+    this->elements = elements;
 }
 
-BaliseDouble::BaliseDouble(BaliseDouble &elemBalise): Element((Element)elemBalise)
+BaliseDouble::BaliseDouble(BaliseDouble &elemBalise): Balise((Balise)elemBalise)
 {
-
-    this->lesAttributs = elemBalise.lesAttributs;
-    this->lesElements = elemBalise.lesElements;
-    this->nom = elemBalise.nom;
-    this->type = elemBalise.type;
+	//TODO
+    //this->lesAttributs = elemBalise.lesAttributs;
+    //this->elements = elemBalise.elements;
+    //this->nom = elemBalise.nom;
+    //this->type = elemBalise.type;
 }
 
 list<Element *> *BaliseDouble::getElements()
 {
     // cout << "oukay" << endl;
-    return lesElements;
-}
-
-list<Attribut *> *BaliseDouble::getAttributs()
-{
-    return lesAttributs;
-}
-
-string BaliseDouble::getName()
-{
-    return nom;
-}
-
-string BaliseDouble::getType()
-{
-    return type;
+    return elements;
 }
 
 list<Element *> *BaliseDouble::getElementsByName(string name)
 {
     list<Element *> *elementsOk = new list<Element *>();
-    for (list<Element *>::iterator it = this->lesElements->begin(); it != this->lesElements->end(); it++)
+    for (list<Element *>::iterator it = this->elements->begin(); it != this->elements->end(); it++)
     {
         // if (strcmp((*it)->getName, name) == 0)
         // {
@@ -88,7 +69,7 @@ string BaliseDouble::toString()
     buffer.append(">");
 
     //Boucle pour les elements
-    for (list<Element *>::iterator it = this->lesElements->begin(); it != this->lesElements->end(); it++)
+    for (list<Element *>::iterator it = this->elements->begin(); it != this->elements->end(); it++)
     {
         buffer.append("\n");
         moarIndent();
@@ -107,5 +88,5 @@ string BaliseDouble::toString()
 }
 
 void BaliseDouble::addElement(list<Element*>* elem){
-    this->lesElements->insert(this->lesElements->begin(),elem->begin(),elem->end());
+    this->elements->insert(this->lesElements->begin(),elem->begin(),elem->end());
 }

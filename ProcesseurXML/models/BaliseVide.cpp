@@ -6,17 +6,17 @@ BaliseVide::BaliseVide(std::string pNom, std::list<Attribut*> *attributs):Balise
 
 }
 
-BaliseVide::BaliseVide(BaliseVide &baliseVide): Element((Element)elemBaliseOrph)
+BaliseVide::BaliseVide(BaliseVide &baliseVide): Balise((Balise)baliseVide)
 {
 	//TODO
-    this->attributs = elemBaliseOrph.lesAttributs;
-    this->nom = elemBaliseOrph.nom;
+    //this->attributs = elemBaliseOrph.attributs;
+    //this->nom = elemBaliseOrph.nom;
 }
 
 BaliseVide::~BaliseVide()
 {
     
-}
+} 
 
 std::string BaliseVide::toString()
 {
@@ -26,7 +26,7 @@ std::string BaliseVide::toString()
     buffer.append(":");
     buffer.append(this->nom);
 
-    for (list<Attribut *>::iterator it = this->lesAttributs->begin(); it != this->lesAttributs->end(); it++)
+    for (list<Attribut *>::iterator it = this->attributs->begin(); it != this->attributs->end(); it++)
     {
         buffer.append(" ");
         buffer.append((*it)->toString());
