@@ -3,6 +3,7 @@
 #include "Balise.h"
 #include "Attribut.h"
 #include <list>
+#include <string>
 
 class BaliseVide: public Balise
 {
@@ -11,7 +12,7 @@ public:
     ~BaliseVide();
     BaliseVide (BaliseVide& baliseVide);
 
-    char *toString();
+    string toString();
 
 private:
 
