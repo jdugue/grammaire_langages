@@ -9,7 +9,7 @@ COMMUN = commun
 EFFACE = clean
 LIBS = $(PATH_LIB)
 
-OBJETS =   $(wildcard ./*.cpp) $(wildcard ./*.h) $(wildcard ./model/*.h) $(wildcard ./model/*.cpp)
+OBJETS =   $(wildcard ./*.cpp) $(wildcard ./*.h) $(wildcard ./models/*.h) $(wildcard ./models/*.cpp)
 # $(wildcard ./*.l)
 # $(wildcard ./*.y)
 	# g++ -std=c++11 -g -DYYDEBUG -o xmltool main.cpp xml.tab.c lex.xml.c

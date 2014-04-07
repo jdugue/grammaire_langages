@@ -2,7 +2,7 @@
 #define ATTRIBUT_H
 
 #include <string>
-#include <stdio>
+#include <stdio.h>
 using namespace std;
 
 class Attribut
