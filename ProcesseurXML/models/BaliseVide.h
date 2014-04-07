@@ -1,26 +1,20 @@
-#ifndef ELEMENT_BALISE_ORPHELINE_H
-#define ELEMENT_BALISE_ORPHELINE_H
-#include "Element.h"
+#ifndef BALISE_VIDE_H
+#define BALISE_VIDE_H
+#include "Balise.h"
 #include "Attribut.h"
 #include <list>
 
-class ElementBaliseOrpheline: public Element
+class BaliseVide: public Balise
 {
 public:
-    ElementBaliseOrpheline(char *, list<Attribut*>*, char *);
-    ~ElementBaliseOrpheline();
-    ElementBaliseOrpheline (ElementBaliseOrpheline& elemBaliseOrph);
-    list<Attribut *> * getLesAttributs();
-    list<Element *> *getLesElements();
-    char* getName();
+    BaliseVide(char *, list<Attribut*>*);
+    ~BaliseVide();
+    BaliseVide (BaliseVide& baliseVide);
+
     char *toString();
-    char* getType();
-    void addElement(list<Element*>*tet){};
 
 private:
-	char *type;
-	char *nom;
-	list<Attribut*> *lesAttributs;
+
 };
 
 #endif

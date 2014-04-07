@@ -1,8 +1,10 @@
 #include "BaliseVide.h"
 
 
-BaliseVide::BaliseVide(std::string pNom, std::list<Attribut*> *attributs):Balise(pNom, attributs)
+Balise::Balise(std::string pNom, std::list<Attribut*> *attributs):Element()
 {
+	nom = pNom;
+	this->attributs = attributs;
 
 }
 
@@ -11,6 +13,16 @@ BaliseVide::BaliseVide(BaliseVide &baliseVide): Element((Element)elemBaliseOrph)
 	//TODO
     this->attributs = elemBaliseOrph.lesAttributs;
     this->nom = elemBaliseOrph.nom;
+}
+
+std::string BaliseVide::getNom()
+{
+	return nom;
+}
+
+std::list<Attribut *> * BaliseVide::getAttributs()
+{
+	return attributs;
 }
 
 BaliseVide::~BaliseVide()
