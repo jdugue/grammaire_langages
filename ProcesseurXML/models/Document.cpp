@@ -10,13 +10,13 @@ Document::Document()
 
 }
 
-Document::Document(list<PI *> prolog, string *doctype, list<Element *> *elems)
+Document::Document(list<PI *> prolog, char* doctype, list<Element *> *elems)
 {
 	// this->nom = nom;
 	// this->type = type;
 	this->elems = elems;
 	this->prolog = prolog;
-	this->doctype = doctype;
+	this->doctype = string(doctype);
 }
 
 // Document::Document(Element *elementRacine)

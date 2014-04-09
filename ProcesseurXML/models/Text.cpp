@@ -5,9 +5,9 @@ Text::Text():Element()
     contenu = new string();
 }
 
-Text::Text(std::string& contenu):Element()
+Text::Text(char* contenu):Element()
 {
-    contenu (contenu);
+    this>contenu=std::string (contenu);
 }
 
 Text::Text(Text &text): Element((Element)text)

@@ -3,10 +3,10 @@
 #include <iostream>
 using namespace std;
 
-Attribut::Attribut(string pNom, string pValeur)
+Attribut::Attribut(char* pNom, char* pValeur)
 {
-    this->nom = pNom;
-    this->valeur = pValeur;
+    this->nom = string(pNom);
+    this->valeur = string(pValeur);
 }
 
 Attribut::Attribut(const Attribut& attr)

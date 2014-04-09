@@ -13,7 +13,7 @@ class Document
 	public:
 		Document();
 		// Document(Element *);
-		Document(list<PI *> *, string *, list<Element *> *);
+		Document(list<PI *> *, char*, list<Element *> *);
 		~Document();
 		// Element *getElems();
 		// string toString();
