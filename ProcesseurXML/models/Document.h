@@ -5,24 +5,25 @@
 #include <list>
 #include <vector>
 #include "Element.h"
+#include "PI.h"
 using namespace std;
 
 class Document
 {
 	public:
 		Document();
-		Document(Element *);
-		Document(string *, int *, list<Element *> *,list<PI *> *, string *);
+		// Document(Element *);
+		Document(list<PI *> *, string *, list<Element *> *);
 		~Document();
-		Element *getElems();
-		char *toString();
-		bool hasEnTete();
-		list<EnTete *> *getProlog();
+		// Element *getElems();
+		// string toString();
+		// bool hasEnTete();
+		// list<PI *> * getProlog();
 	private:
-		string nom;
-		int type;
+		// string nom;
+		// int type;
 		list<Element *> elems;
-		list<PI *> prolog
+		list<PI *> prolog;
 		string doctype;
 };
 

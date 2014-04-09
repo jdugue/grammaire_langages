@@ -35,6 +35,7 @@ void xmlerror(const char * msg)
    list<Attribut*>* latts;
    Attribut* att;
    Text* txt;
+	
 }
 
 %token EGAL SLASH SUP SUPSPECIAL DOCTYPE COLON INFSPECIAL INF CDATABEGIN
@@ -53,7 +54,8 @@ void xmlerror(const char * msg)
 %%
 
 document
- : entete doctype elements { $$=new Document($1,$2,$3);}
+ : entete doctype elements { 	string str($2,sizeof($2));
+				$$=new Document($1,$2,$3);}
  ;
 elements
  : elements element {$$=$1;$$->push_back($2);}
@@ -93,6 +95,7 @@ valeurs
  ;
 pi
  : INFSPECIAL NOM atts SUPSPECIAL {$$ = new PI($2,$3);}
+ |INFSPECIAL NOM COLON NOM atts SUPSPECIAL {$$ = new PI($4,$5,$2);}
  ;
 atts
  : atts att {$$=$1;$$->push_back($2);}

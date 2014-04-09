@@ -8,17 +8,18 @@
 class PI: public Element
 {
 public:
-    PI(string&, list<Attribut*>*);
+    PI(string&, list<Attribut*>*, string& = "");
     ~PI();
     PI(PI& pi);
     
-    string getNom();
-    list<Attribut*>* getAtts();
+    // string getNom();
+    // list<Attribut*>* getAtts();
     
-    string toString();
+    // string toString();
 
 protected:
 	string nom;
+    string nomDomaine;
 	list<Attribut*>* atts;
 };
 

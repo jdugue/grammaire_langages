@@ -12,7 +12,6 @@ Balise::Balise(char* pNom, std::list<Attribut*> *attributs, char* pNomDomaine):E
 	nom = std::string(pNom);
     nomDomaine = std::string(pNomDomaine);
 	this->attributs = attributs;
-
 }
 
 Balise::Balise(Balise &balise): Element((Element)balise)

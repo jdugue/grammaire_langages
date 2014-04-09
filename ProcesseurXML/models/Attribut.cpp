@@ -16,23 +16,25 @@ Attribut::Attribut(const Attribut& attr)
     cout<< "..."<<endl<<endl;
 }
 
-string Attribut::getValeur()
-{
-    return this->valeur;
-}
+// string Attribut::getValeur()
+// {
+//     return this->valeur;
+// }
 
-string Attribut::getNom()
-{
-    return this->nom;
-}
+// string Attribut::getNom()
+// {
+//     return this->nom;
+// }
 
 Attribut::~Attribut()
 {
 
 }
 
-string Attribut::toString()
-{
-	string toString = "";
-    return toString.append(this->nom).append("=").append("\"").append(this->valeur).append("\"");
-}
+
+//string Attribut::toString()
+//{
+//	string toString = "";
+//    return toString.append(this->nom).append("=").append("\"").append(this->valeur).append("\"");
+//}
+

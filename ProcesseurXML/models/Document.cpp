@@ -10,17 +10,20 @@ Document::Document()
 
 }
 
-Document::Document(string *nom, int *type, list<Element *> *elems, list<PI *> prolog, string *doctype)
+Document::Document(list<PI *> prolog, string *doctype, list<Element *> *elems)
 {
-	this->enTetes = enTetes;
-	this->elementRacine = elementRacine;
+	// this->nom = nom;
+	// this->type = type;
+	this->elems = elems;
+	this->prolog = prolog;
+	this->doctype = doctype;
 }
 
-Document::Document(Element *elementRacine)
-{
-	this->enTetes = new list<EnTete *>();
-	this->elementRacine = elementRacine;
-}
+// Document::Document(Element *elementRacine)
+// {
+// 	this->enTetes = new list<EnTete *>();
+// 	this->elementRacine = elementRacine;
+// }
 
 Document::~Document()
 {
@@ -33,32 +36,32 @@ Document::~Document()
 
 }
 
-Element *Document::getRacine()
-{
-	return this->elementRacine;
-}
+// Element *Document::getRacine()
+// {
+// 	return this->elementRacine;
+// }
 
-char *Document::toString()
-{
-	nbTab = 0;
-	string buffer("");
-	for (list<EnTete *>::iterator it = this->enTetes->begin(); it != this->enTetes->end(); it++)
-	{
-		buffer.append((*it)->toString());
-		buffer.append("\n");
-	}
-	buffer.append(this->elementRacine->toString());
-	char *cstr = new char[buffer.length() + 1];
-	strcpy(cstr, buffer.c_str());
-	return cstr;
-}
+// string Document::toString()
+// {
+// 	// nbTab = 0;
+// 	// string buffer("");
+// 	// for (list<EnTete *>::iterator it = this->enTetes->begin(); it != this->enTetes->end(); it++)
+// 	// {
+// 	// 	buffer.append((*it)->toString());
+// 	// 	buffer.append("\n");
+// 	// }
+// 	// buffer.append(this->elementRacine->toString());
+// 	// char *cstr = new char[buffer.length() + 1];
+// 	// strcpy(cstr, buffer.c_str());
+// 	return 0;
+// }
 
-bool Document::hasEnTete()
-{
-	return !(this->enTetes->empty());
-}
+// bool Document::hasEnTete()
+// {
+// 	return !(this->enTetes->empty());
+// }
 
-list<EnTete *> *Document::getEnTete()
-{
-	return this->enTetes;
-}
+// list<PI *> *Document::getProlog()
+// {
+// 	return this->prolog;
+// }
