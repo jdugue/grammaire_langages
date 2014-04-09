@@ -6,6 +6,12 @@ BaliseVide::BaliseVide(char*& pNom, std::list<Attribut*> *&attributs, char*& pNo
 
 }
 
+BaliseVide::BaliseVide(char*& pNom, std::list<Attribut*> *&attributs):Balise(pNom, attributs)
+{
+
+}
+
+
 BaliseVide::BaliseVide(BaliseVide &baliseVide): Balise((Balise)baliseVide)
 {
 	//TODO
