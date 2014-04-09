@@ -7,7 +7,7 @@ BaliseDouble::BaliseDouble(): Balise()
     this->elements = new list<Element *>();
 }
 
-BaliseDouble::BaliseDouble(string &nom, list<Element *> *elements, list<Attribut *> *attributs, string& pNomDomaine): Balise(nom, attributs, pNomDomaine)
+BaliseDouble::BaliseDouble(string &nom, list<Element *> *elements, list<Attribut *> *attributs, string& pNomDomaine=""): Balise(nom, attributs, pNomDomaine)
 {
     this->elements = elements;
 }

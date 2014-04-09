@@ -1473,7 +1473,11 @@ yyreduce:
 
   case 6:
 /* Line 1787 of yacc.c  */
+<<<<<<< HEAD
 #line 68 "xml.y"
+=======
+#line 66 "xml.y"
+>>>>>>> 7363d7966b295af723fa72c393590a7d74813dca
     { (yyval.elem)=new BaliseDouble((yyvsp[(4) - (11)].s),(yyvsp[(5) - (11)].latts),(yyvsp[(7) - (11)].lelem),(yyvsp[(2) - (11)].s));}
     break;
 
@@ -1485,7 +1489,11 @@ yyreduce:
 
   case 8:
 /* Line 1787 of yacc.c  */
+<<<<<<< HEAD
 #line 70 "xml.y"
+=======
+#line 68 "xml.y"
+>>>>>>> 7363d7966b295af723fa72c393590a7d74813dca
     { (yyval.elem)=new BaliseVide((yyvsp[(4) - (7)].s),(yyvsp[(5) - (7)].latts),(yyvsp[(2) - (7)].s));}
     break;
 
