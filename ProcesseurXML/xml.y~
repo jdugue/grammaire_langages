@@ -7,6 +7,11 @@
 #include <cstdlib>
 using namespace std;
 #include "commun.h"
+#include "Document.h"
+#include "Attribut.h"
+#include "PI.h"
+#include "Text.h"
+#include "Element.h"
 
 
 extern char xmltext[];
@@ -58,7 +63,7 @@ element
  : INF NOM atts SUP content 
    INF SLASH NOM SUP  { $$=new BaliseDouble($2,$3,$5);}
  |INF NOM COLON NOM atts SUP content 
-   INF SLASH NOM SUP { $$=new BaliseDouble($2,$4,$5,$7);}
+   INF SLASH NOM SUP { $$=new BaliseDouble($4,$5,$7,$2);}
  | INF NOM atts SLASH SUP { $$=new BaliseVide($2,$3);}
  | INF NOM COLON NOM atts SLASH SUP  { $$=new BaliseVide($2,$4,$5);}       
  ;

@@ -63,9 +63,9 @@ element
  : INF NOM atts SUP content 
    INF SLASH NOM SUP  { $$=new BaliseDouble($2,$3,$5);}
  |INF NOM COLON NOM atts SUP content 
-   INF SLASH NOM SUP { $$=new BaliseDouble($2,$4,$5,$7);}
+   INF SLASH NOM SUP { $$=new BaliseDouble($4,$5,$7,$2);}
  | INF NOM atts SLASH SUP { $$=new BaliseVide($2,$3);}
- | INF NOM COLON NOM atts SLASH SUP  { $$=new BaliseVide($2,$4,$5);}       
+ | INF NOM COLON NOM atts SLASH SUP  { $$=new BaliseVide($4,$5,$2);}       
  ;
 content
  : content element {$$=$1;$$->push_back($2);}  
