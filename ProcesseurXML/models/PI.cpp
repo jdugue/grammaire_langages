@@ -2,8 +2,8 @@
 
 PI::PI():Element()
 {
-   nom = new string();
-   nomDomaine = new string();
+   nom = std::string();
+   nomDomaine = std::string();
 }
 
 PI::PI(char* nom, std::list<Attribut*>* atts, char* nomDomaine ):Element()
