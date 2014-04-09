@@ -27,13 +27,8 @@ Document::Document(list<PI *> prolog, char* doctype, list<Element *> *elems)
 
 Document::~Document()
 {
-	delete(this->enTetes);
-	delete(this->nom);
-	delete(this->type);
 	delete(this->elems);
 	delete(this->prolog);
-	delete(this->doctype);
-
 }
 
 // Element *Document::getRacine()

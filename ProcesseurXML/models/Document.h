@@ -22,8 +22,8 @@ class Document
 	private:
 		// string nom;
 		// int type;
-		list<Element *> elems;
-		list<PI *> prolog;
+		list<Element *> *elems;
+		list<PI *> *prolog;
 		string doctype;
 };
 
