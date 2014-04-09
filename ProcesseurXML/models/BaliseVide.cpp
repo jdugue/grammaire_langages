@@ -1,7 +1,7 @@
 #include "BaliseVide.h"
 using namespace std;
 
-BaliseVide::BaliseVide(std::string pNom, std::list<Attribut*> *attributs):Balise(pNom, attributs)
+BaliseVide::BaliseVide(std::string pNom, std::list<Attribut*> *attributs, std::string pNomDomaine):Balise(pNom, attributs,pNomDomaine)
 {
 
 }

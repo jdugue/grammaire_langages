@@ -8,7 +8,7 @@
 class BaliseVide: public Balise
 {
 public:
-    BaliseVide(char *, list<Attribut*>*);
+    BaliseVide(string& , list<Attribut*>*, string&);
     ~BaliseVide();
     BaliseVide (BaliseVide& baliseVide);
 
