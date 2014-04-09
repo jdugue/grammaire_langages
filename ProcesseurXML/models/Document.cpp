@@ -36,32 +36,32 @@ Document::~Document()
 
 }
 
-Element *Document::getRacine()
-{
-	return this->elementRacine;
-}
+// Element *Document::getRacine()
+// {
+// 	return this->elementRacine;
+// }
 
-string Document::toString()
-{
-	// nbTab = 0;
-	// string buffer("");
-	// for (list<EnTete *>::iterator it = this->enTetes->begin(); it != this->enTetes->end(); it++)
-	// {
-	// 	buffer.append((*it)->toString());
-	// 	buffer.append("\n");
-	// }
-	// buffer.append(this->elementRacine->toString());
-	// char *cstr = new char[buffer.length() + 1];
-	// strcpy(cstr, buffer.c_str());
-	return 0;
-}
+// string Document::toString()
+// {
+// 	// nbTab = 0;
+// 	// string buffer("");
+// 	// for (list<EnTete *>::iterator it = this->enTetes->begin(); it != this->enTetes->end(); it++)
+// 	// {
+// 	// 	buffer.append((*it)->toString());
+// 	// 	buffer.append("\n");
+// 	// }
+// 	// buffer.append(this->elementRacine->toString());
+// 	// char *cstr = new char[buffer.length() + 1];
+// 	// strcpy(cstr, buffer.c_str());
+// 	return 0;
+// }
 
-bool Document::hasEnTete()
-{
-	return !(this->enTetes->empty());
-}
+// bool Document::hasEnTete()
+// {
+// 	return !(this->enTetes->empty());
+// }
 
-list<PI *> *Document::getProlog()
-{
-	return this->prolog;
-}
+// list<PI *> *Document::getProlog()
+// {
+// 	return this->prolog;
+// }
