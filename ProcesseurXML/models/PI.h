@@ -12,14 +12,14 @@ public:
     ~PI();
     PI(PI& pi);
     
-    string getNom();
-    list<Attribut*>* getAtts();
+    // string getNom();
+    // list<Attribut*>* getAtts();
     
-    string toString();
+    // string toString();
 
 protected:
 	string nom;
-        string nomDomaine;
+    string nomDomaine;
 	list<Attribut*>* atts;
 };
 
