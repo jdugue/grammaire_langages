@@ -8,7 +8,7 @@
 class Balise: public Element
 {
 public:
-    Balise(string&, list<Attribut*>*);
+    Balise(string&, list<Attribut*>*, string&);
     ~Balise();
     Balise(Balise& balise);
     
@@ -20,6 +20,7 @@ public:
 protected:
 	string nom;
 	list<Attribut*> *attributs;
+	string nomDomaine;
 };
 
 #endif

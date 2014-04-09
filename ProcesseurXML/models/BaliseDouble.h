@@ -14,7 +14,7 @@ class BaliseDouble: public Balise
 
 		list<Element *> *getElements();
 
-		BaliseDouble(string &, list<Element *> *, list<Attribut *> *, string );
+		BaliseDouble(string &, list<Element *> *, list<Attribut *> *);
 		~BaliseDouble();
 		string toString();
 		void addElement(list<Element*>*);

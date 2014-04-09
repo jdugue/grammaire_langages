@@ -9,10 +9,6 @@ BaliseDouble::BaliseDouble(): Balise()
 
 BaliseDouble::BaliseDouble(string &nom, list<Element *> *elements, list<Attribut *> *attributs): Balise(nom, attributs)
 {
-	// this->lesAttributs = attributs;
-	// this->lesElements = elements;
-	// this->nom = nom;
-	// this->type = type;
     this->elements = elements;
 }
 
@@ -27,18 +23,7 @@ BaliseDouble::BaliseDouble(BaliseDouble &elemBalise): Balise((Balise)elemBalise)
 
 list<Element *> *BaliseDouble::getElements()
 {
-	// cout << "oukay" << endl;
-	return lesElements;
-}
-
-list<Attribut *> *BaliseDouble::getAttributs()
-{
-	return lesAttributs;
-}
-
-string BaliseDouble::getName()
-{
-	return nom;
+	return elements;
 }
 
 list<Element *> *BaliseDouble::getElementsByName(string name)

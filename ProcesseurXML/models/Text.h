@@ -2,13 +2,12 @@
 #define TEXT_H
 #include "Element.h"
 #include "Attribut.h"
-#include <list>
 #include <string>
 
 class Text: public Element
 {
 public:
-    Text(string&, list<Attribut*>*);
+    Text(string&);
     ~Text();
     Text(Text& text);
     
