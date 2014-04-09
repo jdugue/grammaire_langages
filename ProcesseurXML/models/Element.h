@@ -13,7 +13,7 @@ public:
     //variable contenu = de la balise ouvrante a la fermante incluses
     Element();
     Element(const Element &) {}       //constructeur de copie
-    virtual char *toString()
+    virtual string toString()
     {
         cout << "YOU SHOULDN'T BE HERE" << endl;
         return 0;
@@ -23,7 +23,7 @@ public:
         cout << "YOU SHOULDN'T BE HERE" << endl;
         return 0;
     }
-    virtual char *getName()
+    virtual string getName()
     {
         cout << "YOU SHOULDN'T BE HERE" << endl;
         return 0;
@@ -34,7 +34,7 @@ public:
         return 0;
     }
 
-    virtual char *getType()
+    virtual string getType()
     {
         cout << "YOU SHOULDN'T BE HERE" << endl;
         return 0;
@@ -43,12 +43,12 @@ public:
     {
         cout << "YOU SHOULDN'T BE HERE OLOL" << endl;
     }
-    virtual list<Element *> *getElementsByName(char *)
+    virtual list<Element *> *getElementsByName(string )
     {
         cout << "YOU SHOULDN'T BE HERE" << endl;
         return 0;
     }
-    virtual char *getContenu()
+    virtual string getContenu()
     {
         cout << "YOU SHOULDN'T BE HERE" << endl;
         return 0;

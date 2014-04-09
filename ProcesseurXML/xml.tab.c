@@ -1446,7 +1446,7 @@ yyreduce:
   case 6:
 /* Line 1787 of yacc.c  */
 #line 66 "xml.y"
-    { (yyval.elem)=new BaliseDouble((yyvsp[(2) - (11)].s),(yyvsp[(4) - (11)].s),(yyvsp[(5) - (11)].latts),(yyvsp[(7) - (11)].lelem));}
+    { (yyval.elem)=new BaliseDouble((yyvsp[(4) - (11)].s),(yyvsp[(5) - (11)].latts),(yyvsp[(7) - (11)].lelem),(yyvsp[(2) - (11)].s));}
     break;
 
   case 7:
@@ -1458,7 +1458,7 @@ yyreduce:
   case 8:
 /* Line 1787 of yacc.c  */
 #line 68 "xml.y"
-    { (yyval.elem)=new BaliseVide((yyvsp[(2) - (7)].s),(yyvsp[(4) - (7)].s),(yyvsp[(5) - (7)].latts));}
+    { (yyval.elem)=new BaliseVide((yyvsp[(4) - (7)].s),(yyvsp[(5) - (7)].latts),(yyvsp[(2) - (7)].s));}
     break;
 
   case 9:
