@@ -27,3 +27,4 @@
 xml.tab.c
 xml.output
 xml.tab.h
+lex.xml.c
