@@ -12,6 +12,9 @@ using namespace std;
 #include "PI.h"
 #include "Text.h"
 #include "Element.h"
+#include "BaliseDouble.h"
+#include "BaliseVide.h"
+#include "Commentaire.h"
 
 
 extern char xmltext[];
@@ -76,7 +79,7 @@ content
  | /* vide */    {$$ = new list<Element*>();}          
  ;
 entete
- :entete pi   { $$ = new list<PI>();}
+ :entete pi   { $$ = new list<PI*>();}
  | /* vide */     
  ;
 
