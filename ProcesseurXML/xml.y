@@ -14,6 +14,7 @@ using namespace std;
 #include "Element.h"
 #include "BaliseDouble.h"
 #include "BaliseVide.h"
+#include "Commentaire.h"
 
 
 extern char xmltext[];

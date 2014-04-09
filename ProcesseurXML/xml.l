@@ -12,6 +12,9 @@
 #include "PI.h"
 #include "Text.h"
 #include "Element.h"
+#include "BaliseDouble.h"
+#include "BaliseVide.h"
+#include "Commentaire.h"
 #include "xml.tab.h"
 
 
