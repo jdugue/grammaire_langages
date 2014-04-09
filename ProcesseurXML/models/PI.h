@@ -8,7 +8,7 @@
 class PI: public Element
 {
 public:
-    PI(char*, list<Attribut*>*, char* = "");
+    PI(char*, list<Attribut*>*, char* = (char*)"");
     ~PI();
     PI(PI& pi);
     
