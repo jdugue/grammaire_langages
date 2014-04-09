@@ -79,8 +79,8 @@ content
  | /* vide */    {$$ = new list<Element*>();}          
  ;
 entete
- :entete pi   { $$ = new list<PI*>();}
- | /* vide */     
+ :entete pi   	{$$=$1;$$->push_back($2);}
+ | /* vide */   { $$ = new list<PI*>();}  
  ;
 
 doctype
