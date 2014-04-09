@@ -28,13 +28,13 @@ void xmlerror(const char * msg)
 %union {
    char * s;
    Document* doc;
-   Element* elem
+   Element* elem;
    list<Element*>* lelem;
    PI* pi;
    list<PI*>* lpi;
    list<Attribut*>* latts;
    Attribut* att;
-   Text* txt;
+   Text* text;
 	
 }
 
@@ -47,15 +47,14 @@ void xmlerror(const char * msg)
 %type <lpi> entete
 %type <latts> atts valeurs 
 %type <att> att
-%type <txt> cdata
+%type <text> cdata
 %type <s> doctype
 
 
 %%
 
 document
- : entete doctype elements { 	string str($2,sizeof($2));
-				$$=new Document($1,$2,$3);}
+ : entete doctype elements { $$=new Document($1,$2,$3);}
  ;
 elements
  : elements element {$$=$1;$$->push_back($2);}

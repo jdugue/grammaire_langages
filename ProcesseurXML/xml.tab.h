@@ -72,13 +72,13 @@ typedef union YYSTYPE
 
    char * s;
    Document* doc;
-   Element* elem
+   Element* elem;
    list<Element*>* lelem;
    PI* pi;
    list<PI*>* lpi;
    list<Attribut*>* latts;
    Attribut* att;
-   Text* txt;
+   Text* text;
 	
 
 

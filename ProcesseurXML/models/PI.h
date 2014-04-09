@@ -8,7 +8,7 @@
 class PI: public Element
 {
 public:
-    PI(string&, list<Attribut*>*, string& = "");
+    PI(string&, list<Attribut*>*, string& nomDomaine= "");
     ~PI();
     PI(PI& pi);
     
