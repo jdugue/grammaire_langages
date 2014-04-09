@@ -7,6 +7,7 @@
 class Text: public Element
 {
 public:
+    Text();
     Text(char*);
     ~Text();
     Text(Text& text);
