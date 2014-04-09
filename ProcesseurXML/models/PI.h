@@ -1,5 +1,5 @@
-#ifndef TEXT_H
-#define TEXT_H
+#ifndef PI_H
+#define PI_H
 #include "Element.h"
 #include "Attribut.h"
 #include <list>
