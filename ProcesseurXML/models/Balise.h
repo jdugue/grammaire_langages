@@ -8,7 +8,8 @@
 class Balise: public Element
 {
 public:
-    Balise(char*, list<Attribut*>*, char*);
+    Balise(char*&, list<Attribut*>*&, char*&);
+	Balise(char*&, list<Attribut*>*&);
     ~Balise();
     Balise(Balise& balise);
     

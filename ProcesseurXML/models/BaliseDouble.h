@@ -10,7 +10,8 @@ class BaliseDouble: public Balise
 {
 	public:
 		BaliseDouble();
-		BaliseDouble(char*, list<Element *> *, list<Attribut *> *, char*);
+		BaliseDouble(char*&, list<Element *> *&, list<Attribut *> *&);
+ 		BaliseDouble(char*&, list<Element *> *&, list<Attribut *> *&, char*& pNomDomaine);
 
 		~BaliseDouble();
 
