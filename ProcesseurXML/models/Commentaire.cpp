@@ -2,10 +2,10 @@
 
 Commentaire::Commentaire():Element()
 {
-    contenu = new string();
+    contenu = std::string();
 }
 
-Commentaire::Commentaire(char* contenu):Element()
+Commentaire::Commentaire(char*& contenu):Element()
 {
     this->contenu = std::string (contenu);
 }
