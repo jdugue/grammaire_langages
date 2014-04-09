@@ -8,14 +8,15 @@
 class Balise: public Element
 {
 public:
-    Balise(string&, list<Attribut*>*, string&);
+    Balise(char*, list<Attribut*>*, char*);
     ~Balise();
     Balise(Balise& balise);
     
-    list<Attribut *> * getAttributs();
+    /*list<Attribut *> * getAttributs();
     string getNom();
     
-    string toString();
+    virtual string toString() = 0;
+	*/
 
 protected:
 	string nom;

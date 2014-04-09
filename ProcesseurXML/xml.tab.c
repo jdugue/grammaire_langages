@@ -1,8 +1,8 @@
-/* A Bison parser, made by GNU Bison 2.7.12-4996.  */
+/* A Bison parser, made by GNU Bison 2.6.1.  */
 
 /* Bison implementation for Yacc-like parsers in C
    
-      Copyright (C) 1984, 1989-1990, 2000-2013 Free Software Foundation, Inc.
+      Copyright (C) 1984, 1989-1990, 2000-2012 Free Software Foundation, Inc.
    
    This program is free software: you can redistribute it and/or modify
    it under the terms of the GNU General Public License as published by
@@ -44,7 +44,7 @@
 #define YYBISON 1
 
 /* Bison version.  */
-#define YYBISON_VERSION "2.7.12-4996"
+#define YYBISON_VERSION "2.6.1"
 
 /* Skeleton name.  */
 #define YYSKELETON_NAME "yacc.c"
@@ -69,7 +69,7 @@
 #define yynerrs         xmlnerrs
 
 /* Copy the first part of user declarations.  */
-/* Line 371 of yacc.c  */
+/* Line 336 of yacc.c  */
 #line 1 "xml.y"
 
 
@@ -97,7 +97,7 @@ void xmlerror(const char * msg)
 }
 
 
-/* Line 371 of yacc.c  */
+/* Line 336 of yacc.c  */
 #line 102 "xml.tab.c"
 
 # ifndef YY_NULL
@@ -118,8 +118,8 @@ void xmlerror(const char * msg)
 
 /* In a future release of Bison, this section will be replaced
    by #include "xml.tab.h".  */
-#ifndef YY_XML_XML_TAB_H_INCLUDED
-# define YY_XML_XML_TAB_H_INCLUDED
+#ifndef XML_XML_TAB_H
+# define XML_XML_TAB_H
 /* Enabling traces.  */
 #ifndef YYDEBUG
 # define YYDEBUG 1
@@ -155,7 +155,7 @@ extern int xmldebug;
 #if ! defined YYSTYPE && ! defined YYSTYPE_IS_DECLARED
 typedef union YYSTYPE
 {
-/* Line 387 of yacc.c  */
+/* Line 350 of yacc.c  */
 #line 28 "xml.y"
 
    char * s;
@@ -169,7 +169,7 @@ typedef union YYSTYPE
    Text* txt;
 
 
-/* Line 387 of yacc.c  */
+/* Line 350 of yacc.c  */
 #line 174 "xml.tab.c"
 } YYSTYPE;
 # define YYSTYPE_IS_TRIVIAL 1
@@ -193,11 +193,11 @@ int xmlparse ();
 #endif
 #endif /* ! YYPARSE_PARAM */
 
-#endif /* !YY_XML_XML_TAB_H_INCLUDED  */
+#endif /* !XML_XML_TAB_H  */
 
 /* Copy the second part of user declarations.  */
 
-/* Line 390 of yacc.c  */
+/* Line 353 of yacc.c  */
 #line 202 "xml.tab.c"
 
 #ifdef short
@@ -251,33 +251,24 @@ typedef short int yytype_int16;
 # if defined YYENABLE_NLS && YYENABLE_NLS
 #  if ENABLE_NLS
 #   include <libintl.h> /* INFRINGES ON USER NAME SPACE */
-#   define YY_(Msgid) dgettext ("bison-runtime", Msgid)
+#   define YY_(msgid) dgettext ("bison-runtime", msgid)
 #  endif
 # endif
 # ifndef YY_
-#  define YY_(Msgid) Msgid
-# endif
-#endif
-
-#ifndef __attribute__
-/* This feature is available in gcc versions 2.5 and later.  */
-# if (! defined __GNUC__ || __GNUC__ < 2 \
-      || (__GNUC__ == 2 && __GNUC_MINOR__ < 5))
-#  define __attribute__(Spec) /* empty */
+#  define YY_(msgid) msgid
 # endif
 #endif
 
 /* Suppress unused-variable warnings by "using" E.  */
 #if ! defined lint || defined __GNUC__
-# define YYUSE(E) ((void) (E))
+# define YYUSE(e) ((void) (e))
 #else
-# define YYUSE(E) /* empty */
+# define YYUSE(e) /* empty */
 #endif
-
 
 /* Identity function, used to suppress warnings about constant conditions.  */
 #ifndef lint
-# define YYID(N) (N)
+# define YYID(n) (n)
 #else
 #if (defined __STDC__ || defined __C99__FUNC__ \
      || defined __cplusplus || defined _MSC_VER)
@@ -604,10 +595,10 @@ static const yytype_uint8 yytable[] =
       33,    44,    51,    53,    47,    49,    52,    45,     0,    14
 };
 
-#define yypact_value_is_default(Yystate) \
-  (!!((Yystate) == (-11)))
+#define yypact_value_is_default(yystate) \
+  ((yystate) == (-11))
 
-#define yytable_value_is_error(Yytable_value) \
+#define yytable_value_is_error(yytable_value) \
   YYID (0)
 
 static const yytype_int8 yycheck[] =
@@ -675,18 +666,47 @@ do                                                              \
     }								\
 while (YYID (0))
 
-/* Error token number */
+
 #define YYTERROR	1
 #define YYERRCODE	256
 
+/* YYLLOC_DEFAULT -- Set CURRENT to span from RHS[1] to RHS[N].
+   If N is 0, then set CURRENT to the empty location which ends
+   the previous symbol: RHS[0] (always defined).  */
+
+#ifndef YYLLOC_DEFAULT
+# define YYLLOC_DEFAULT(Current, Rhs, N)                                \
+    do                                                                  \
+      if (YYID (N))                                                     \
+        {                                                               \
+          (Current).first_line   = YYRHSLOC (Rhs, 1).first_line;        \
+          (Current).first_column = YYRHSLOC (Rhs, 1).first_column;      \
+          (Current).last_line    = YYRHSLOC (Rhs, N).last_line;         \
+          (Current).last_column  = YYRHSLOC (Rhs, N).last_column;       \
+        }                                                               \
+      else                                                              \
+        {                                                               \
+          (Current).first_line   = (Current).last_line   =              \
+            YYRHSLOC (Rhs, 0).last_line;                                \
+          (Current).first_column = (Current).last_column =              \
+            YYRHSLOC (Rhs, 0).last_column;                              \
+        }                                                               \
+    while (YYID (0))
+#endif
+
+#define YYRHSLOC(Rhs, K) ((Rhs)[K])
+
+
 
 /* This macro is provided for backward compatibility. */
+
 #ifndef YY_LOCATION_PRINT
 # define YY_LOCATION_PRINT(File, Loc) ((void) 0)
 #endif
 
 
 /* YYLEX -- calling `yylex' with the right arguments.  */
+
 #ifdef YYLEX_PARAM
 # define YYLEX yylex (YYLEX_PARAM)
 #else
@@ -746,7 +766,11 @@ yy_symbol_value_print (yyoutput, yytype, yyvaluep)
 # else
   YYUSE (yyoutput);
 # endif
-  YYUSE (yytype);
+  switch (yytype)
+    {
+      default:
+	break;
+    }
 }
 
 
@@ -987,6 +1011,7 @@ yysyntax_error (YYSIZE_T *yymsg_alloc, char **yymsg,
 {
   YYSIZE_T yysize0 = yytnamerr (YY_NULL, yytname[yytoken]);
   YYSIZE_T yysize = yysize0;
+  YYSIZE_T yysize1;
   enum { YYERROR_VERBOSE_ARGS_MAXIMUM = 5 };
   /* Internationalized format string. */
   const char *yyformat = YY_NULL;
@@ -1049,13 +1074,11 @@ yysyntax_error (YYSIZE_T *yymsg_alloc, char **yymsg,
                     break;
                   }
                 yyarg[yycount++] = yytname[yyx];
-                {
-                  YYSIZE_T yysize1 = yysize + yytnamerr (YY_NULL, yytname[yyx]);
-                  if (! (yysize <= yysize1
-                         && yysize1 <= YYSTACK_ALLOC_MAXIMUM))
-                    return 2;
-                  yysize = yysize1;
-                }
+                yysize1 = yysize + yytnamerr (YY_NULL, yytname[yyx]);
+                if (! (yysize <= yysize1
+                       && yysize1 <= YYSTACK_ALLOC_MAXIMUM))
+                  return 2;
+                yysize = yysize1;
               }
         }
     }
@@ -1075,12 +1098,10 @@ yysyntax_error (YYSIZE_T *yymsg_alloc, char **yymsg,
 # undef YYCASE_
     }
 
-  {
-    YYSIZE_T yysize1 = yysize + yystrlen (yyformat);
-    if (! (yysize <= yysize1 && yysize1 <= YYSTACK_ALLOC_MAXIMUM))
-      return 2;
-    yysize = yysize1;
-  }
+  yysize1 = yysize + yystrlen (yyformat);
+  if (! (yysize <= yysize1 && yysize1 <= YYSTACK_ALLOC_MAXIMUM))
+    return 2;
+  yysize = yysize1;
 
   if (*yymsg_alloc < yysize)
     {
@@ -1136,7 +1157,12 @@ yydestruct (yymsg, yytype, yyvaluep)
     yymsg = "Deleting";
   YY_SYMBOL_PRINT (yymsg, yytype, yyvaluep, yylocationp);
 
-  YYUSE (yytype);
+  switch (yytype)
+    {
+
+      default:
+	break;
+    }
 }
 
 
@@ -1145,17 +1171,8 @@ yydestruct (yymsg, yytype, yyvaluep)
 /* The lookahead symbol.  */
 int yychar;
 
-
-#ifndef YY_IGNORE_MAYBE_UNINITIALIZED_BEGIN
-# define YY_IGNORE_MAYBE_UNINITIALIZED_BEGIN
-# define YY_IGNORE_MAYBE_UNINITIALIZED_END
-#endif
-#ifndef YY_INITIAL_VALUE
-# define YY_INITIAL_VALUE(Value) /* Nothing. */
-#endif
-
 /* The semantic value of the lookahead symbol.  */
-YYSTYPE yylval YY_INITIAL_VALUE(yyval_default);
+YYSTYPE yylval;
 
 /* Number of syntax errors so far.  */
 int yynerrs;
@@ -1213,7 +1230,7 @@ yyparse ()
   int yyn;
   int yyresult;
   /* Lookahead token as an internal (translated) token number.  */
-  int yytoken = 0;
+  int yytoken;
   /* The variables used to return semantic value and location from the
      action routines.  */
   YYSTYPE yyval;
@@ -1231,8 +1248,9 @@ yyparse ()
      Keep to zero when no symbol should be popped.  */
   int yylen = 0;
 
-  yyssp = yyss = yyssa;
-  yyvsp = yyvs = yyvsa;
+  yytoken = 0;
+  yyss = yyssa;
+  yyvs = yyvsa;
   yystacksize = YYINITDEPTH;
 
   YYDPRINTF ((stderr, "Starting parse\n"));
@@ -1241,6 +1259,13 @@ yyparse ()
   yyerrstatus = 0;
   yynerrs = 0;
   yychar = YYEMPTY; /* Cause a token to be read.  */
+
+  /* Initialize stack pointers.
+     Waste one element of value and location stack
+     so that they stay on the same level as the state stack.
+     The wasted elements are never initialized.  */
+  yyssp = yyss;
+  yyvsp = yyvs;
   goto yysetstate;
 
 /*------------------------------------------------------------.
@@ -1381,9 +1406,7 @@ yybackup:
   yychar = YYEMPTY;
 
   yystate = yyn;
-  YY_IGNORE_MAYBE_UNINITIALIZED_BEGIN
   *++yyvsp = yylval;
-  YY_IGNORE_MAYBE_UNINITIALIZED_END
 
   goto yynewstate;
 
@@ -1446,7 +1469,7 @@ yyreduce:
   case 6:
 /* Line 1787 of yacc.c  */
 #line 66 "xml.y"
-    { (yyval.elem)=new BaliseDouble((yyvsp[(2) - (11)].s),(yyvsp[(4) - (11)].s),(yyvsp[(5) - (11)].latts),(yyvsp[(7) - (11)].lelem));}
+    { (yyval.elem)=new BaliseDouble((yyvsp[(4) - (11)].s),(yyvsp[(5) - (11)].latts),(yyvsp[(7) - (11)].lelem),(yyvsp[(2) - (11)].s));}
     break;
 
   case 7:
@@ -1458,7 +1481,7 @@ yyreduce:
   case 8:
 /* Line 1787 of yacc.c  */
 #line 68 "xml.y"
-    { (yyval.elem)=new BaliseVide((yyvsp[(2) - (7)].s),(yyvsp[(4) - (7)].s),(yyvsp[(5) - (7)].latts));}
+    { (yyval.elem)=new BaliseVide((yyvsp[(4) - (7)].s),(yyvsp[(5) - (7)].latts),(yyvsp[(2) - (7)].s));}
     break;
 
   case 9:
@@ -1557,7 +1580,7 @@ yyreduce:
 
 
 /* Line 1787 of yacc.c  */
-#line 1561 "xml.tab.c"
+#line 1584 "xml.tab.c"
       default: break;
     }
   /* User semantic actions sometimes alter yychar, and that requires
@@ -1720,9 +1743,7 @@ yyerrlab1:
       YY_STACK_PRINT (yyss, yyssp);
     }
 
-  YY_IGNORE_MAYBE_UNINITIALIZED_BEGIN
   *++yyvsp = yylval;
-  YY_IGNORE_MAYBE_UNINITIALIZED_END
 
 
   /* Shift the error token.  */
@@ -1786,5 +1807,6 @@ yyreturn:
   /* Make sure YYID is used.  */
   return YYID (yyresult);
 }
+
 
 

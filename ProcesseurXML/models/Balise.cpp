@@ -2,15 +2,15 @@
 
 Balise::Balise():Element()
 {
-	nom = new string();
+	nom = string();
 	this->attributs = new list<Attribut*>();
 
 }
 
-Balise::Balise(std::string& pNom, std::list<Attribut*> *attributs, std::string& pNomDomaine):Element()
+Balise::Balise(char* pNom, std::list<Attribut*> *attributs, char* pNomDomaine):Element()
 {
-	nom (pNom);
-    nomDomaine (pNomDomaine);
+	nom = std::string(pNom);
+    nomDomaine = std::string(pNomDomaine);
 	this->attributs = attributs;
 
 }
@@ -22,6 +22,7 @@ Balise::Balise(Balise &balise): Element((Element)balise)
     //this->nom = elemBaliseOrph.nom;
 }
 
+/*
 std::string Balise::getNom()
 {
 	return nom;
@@ -32,9 +33,9 @@ std::list<Attribut *> * Balise::getAttributs()
 	return attributs;
 }
 
-std::string Balise::toString()
-{
-	/*
+//std::string Balise::toString()
+//{
+	
     string buffer(format("<"));
 
     buffer.append(this->type);
@@ -50,6 +51,8 @@ std::string Balise::toString()
 
     char *cstr = new char[buffer.length() + 1];
     strcpy(cstr, buffer.c_str());
-    */
-    return 0;
-}
+    
+//    return 0;
+//}
+
+*/

@@ -28,11 +28,11 @@ string Attribut::getNom()
 
 Attribut::~Attribut()
 {
-    delete(this->nom);
-    delete(this->valeur);
+
 }
 
 string Attribut::toString()
 {
-    return strcat(strcat(strcat(this->nom, "=\""), this->valeur), "\"");
+	string toString = "";
+    return toString.append(this->nom).append("=").append("\"").append(this->valeur).append("\"");
 }
