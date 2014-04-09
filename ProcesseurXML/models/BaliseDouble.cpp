@@ -2,26 +2,18 @@
 
 BaliseDouble::BaliseDouble(): Balise()
 {
-<<<<<<< HEAD
-	this->lesAttributs = new list<Attribut *>();
-	// this->lesElements = (list<Element*>**) calloc(2, sizeof(list<Element*>*));
-	this->lesElements = new list<Element *>();
-=======
+	// this->lesAttributs = new list<Attribut *>();
     // this->lesElements = (list<Element*>**) calloc(2, sizeof(list<Element*>*));
     this->elements = new list<Element *>();
->>>>>>> 800c2c5f8eb0e21dd21a0d0f9769b92472ce1602
 }
 
 BaliseDouble::BaliseDouble(string &nom, list<Element *> *elements, list<Attribut *> *attributs): Balise(nom, attributs)
 {
-<<<<<<< HEAD
-	this->lesAttributs = attributs;
-	this->lesElements = elements;
-	this->nom = nom;
-	this->type = type;
-=======
+	// this->lesAttributs = attributs;
+	// this->lesElements = elements;
+	// this->nom = nom;
+	// this->type = type;
     this->elements = elements;
->>>>>>> 800c2c5f8eb0e21dd21a0d0f9769b92472ce1602
 }
 
 BaliseDouble::BaliseDouble(BaliseDouble &elemBalise): Balise((Balise)elemBalise)
