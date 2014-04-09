@@ -68,13 +68,21 @@ extern int xmldebug;
 typedef union YYSTYPE
 {
 /* Line 2049 of yacc.c  */
-#line 22 "xml.y"
+#line 28 "xml.y"
 
    char * s;
+   Document* doc;
+   Element* elem
+   list<Element*>* lelem;
+   PI* pi;
+   list<PI*>* lpi;
+   list<Attribut*>* latts;
+   Attribut* att;
+   Text* txt;
 
 
 /* Line 2049 of yacc.c  */
-#line 78 "xml.tab.h"
+#line 86 "xml.tab.h"
 } YYSTYPE;
 # define YYSTYPE_IS_TRIVIAL 1
 # define yystype YYSTYPE /* obsolescent; will be withdrawn */
