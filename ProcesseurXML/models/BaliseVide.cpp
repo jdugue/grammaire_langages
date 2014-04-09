@@ -12,7 +12,7 @@ BaliseVide::BaliseVide(char*& pNom, std::list<Attribut*> *&attributs):Balise(pNo
 }
 
 
-BaliseVide::BaliseVide(BaliseVide &baliseVide): Balise((Balise)baliseVide)
+BaliseVide::BaliseVide(BaliseVide &baliseVide): Balise(baliseVide)
 {
 	//TODO
     //this->attributs = elemBaliseOrph.attributs;

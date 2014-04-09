@@ -17,7 +17,7 @@ BaliseDouble::BaliseDouble(char*& nom, list<Element *> *&elements, list<Attribut
 	this->elements = elements;
 }
 
-BaliseDouble::BaliseDouble(BaliseDouble &elemBalise): Balise((Balise)elemBalise)
+BaliseDouble::BaliseDouble(BaliseDouble &elemBalise): Balise(elemBalise)
 {
 	//TODO
     //this->lesAttributs = elemBalise.lesAttributs;

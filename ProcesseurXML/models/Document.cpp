@@ -10,7 +10,7 @@ Document::Document()
 
 }
 
-Document::Document(list<PI *> prolog, char* doctype, list<Element *> *elems)
+Document::Document(list<PI *>* prolog, char* doctype, list<Element *> *elems)
 {
 	// this->nom = nom;
 	// this->type = type;

@@ -2,7 +2,8 @@
 
 Balise::Balise():Element()
 {
-	nom = string();
+	nom = std::string();
+	nomDomaine = std::string();
 	this->attributs = new list<Attribut*>();
 
 }
@@ -21,7 +22,7 @@ Balise::Balise(char*& pNom, std::list<Attribut*> *&attributs):Element()
 	this->attributs = attributs;
 }
 
-Balise::Balise(Balise &balise): Element((Element)balise)
+Balise::Balise(const Balise &balise): Element((Element)balise)
 {
 	//TODO
     //this->attributs = elemBaliseOrph.lesAttributs;

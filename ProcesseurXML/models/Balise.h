@@ -10,8 +10,9 @@ class Balise: public Element
 public:
     Balise(char*&, list<Attribut*>*&, char*&);
 	Balise(char*&, list<Attribut*>*&);
+	Balise();
     ~Balise();
-    Balise(Balise& balise);
+    Balise(const Balise& balise);
     
     /*list<Attribut *> * getAttributs();
     string getNom();
