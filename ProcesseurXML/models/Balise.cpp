@@ -29,6 +29,8 @@ Balise::Balise(const Balise &balise): Element((Element)balise)
     //this->nom = elemBaliseOrph.nom;
 }
 
+Balise::~Balise(){}
+
 /*
 std::string Balise::getNom()
 {
