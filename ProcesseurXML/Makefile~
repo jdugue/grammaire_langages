@@ -1,4 +1,4 @@
-COMP = g++ -I ./models/
+COMP = g++
 EDL = g++
 ECHO = echo
 RM = rm

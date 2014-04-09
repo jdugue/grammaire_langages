@@ -6,13 +6,13 @@
 #include <string.h>
 #include <stdlib.h>
 #include "commun.h"
+#include "xml.tab.h"
 #include "commun.h"
 #include "Document.h"
 #include "Attribut.h"
 #include "PI.h"
 #include "Text.h"
 #include "Element.h"
-#include "xml.tab.h"
 
 
 #ifdef FLEXDEBUG
