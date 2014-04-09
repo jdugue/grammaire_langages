@@ -14,7 +14,7 @@ Balise::Balise(std::string& pNom, std::list<Attribut*> *attributs):Element()
 
 }
 
-Balise::Balise(BaliseVide &baliseVide): Element((Element)baliseVide)
+Balise::Balise(Balise &balise): Element((Element)balise)
 {
 	//TODO
     //this->attributs = elemBaliseOrph.lesAttributs;
@@ -26,7 +26,7 @@ std::string Balise::getNom()
 	return nom;
 }
 
-std::list<Attribut *> * BaliseVide::getAttributs()
+std::list<Attribut *> * Balise::getAttributs()
 {
 	return attributs;
 }
