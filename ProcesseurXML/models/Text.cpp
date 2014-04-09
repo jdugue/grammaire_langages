@@ -2,12 +2,14 @@
 
 Text::Text():Element()
 {
-    contenu = new string();
+    // contenu = new string();
+    this->contenu=std::string(contenu);
+    
 }
 
 Text::Text(char* contenu):Element()
 {
-    this>contenu=std::string (contenu);
+    this->contenu=std::string(contenu);
 }
 
 Text::Text(Text &text): Element((Element)text)
