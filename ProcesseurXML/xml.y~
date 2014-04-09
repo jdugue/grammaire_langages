@@ -7,11 +7,6 @@
 #include <cstdlib>
 using namespace std;
 #include "commun.h"
-#include "Document.h"
-#include "Attribut.h"
-#include "PI.h"
-#include "Text.h"
-#include "Element.h"
 
 
 extern char xmltext[];
