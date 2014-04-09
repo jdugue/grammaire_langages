@@ -28,8 +28,7 @@ BaliseDouble::BaliseDouble(BaliseDouble &elemBalise): Balise(elemBalise)
 
 BaliseDouble::~BaliseDouble()
 {
-	//delete lesAttributs;
-	//delete nom;
+	//TODO
 }
 
 /*
