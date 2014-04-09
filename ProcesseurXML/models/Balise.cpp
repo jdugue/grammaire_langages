@@ -7,9 +7,10 @@ Balise::Balise():Element()
 
 }
 
-Balise::Balise(std::string& pNom, std::list<Attribut*> *attributs):Element()
+Balise::Balise(std::string& pNom, std::list<Attribut*> *attributs, std::string& pNomDomaine):Element()
 {
 	nom (pNom);
+    nomDomaine (pNomDomaine);
 	this->attributs = attributs;
 
 }

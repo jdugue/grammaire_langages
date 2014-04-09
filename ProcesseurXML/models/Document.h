@@ -5,23 +5,25 @@
 #include <list>
 #include <vector>
 #include "Element.h"
-#include "EnTete.h"
 using namespace std;
 
 class Document
 {
-public:
-    Document();
-    Document(Element *);
-    Document(list<EnTete *> *, Element *);
-    ~Document();
-    Element *getRacine();
-    char *toString();
-    bool hasEnTete();
-    list<EnTete *> *getEnTete();
-private:
-    Element *elementRacine;
-    list<EnTete *> *enTetes;
+	public:
+		Document();
+		Document(Element *);
+		Document(string *, int *, list<Element *> *,list<PI *> *, string *);
+		~Document();
+		Element *getElems();
+		char *toString();
+		bool hasEnTete();
+		list<EnTete *> *getProlog();
+	private:
+		string nom;
+		int type;
+		list<Element *> elems;
+		list<PI *> prolog
+		string doctype;
 };
 
 #endif
