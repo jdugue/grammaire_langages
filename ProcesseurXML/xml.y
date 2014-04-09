@@ -48,10 +48,10 @@ void xmlerror(const char * msg)
 %type <elem> element
 %type <pi> pi
 %type <lpi> entete
-%type <latts> atts valeurs 
+%type <latts> atts
 %type <att> att
 %type <text> cdata
-%type <s> doctype
+%type <s> doctype valeurs 
 
 
 %%
@@ -92,9 +92,10 @@ doctype
 |/* vide */
 ;     
 valeurs 
- : valeurs VALEUR {$$=$1;$$->push_back($2);}
- |/* vide */ {$$ = new list<Attribut*>();}
+ : valeurs VALEUR {$$=$1; strcat($$,$2) ;}
+ |/* vide */ {$$ = new char[1000];}
  ;
+
 pi
  : INFSPECIAL NOM atts SUPSPECIAL {$$ = new PI($2,$3);}
  |INFSPECIAL NOM COLON NOM atts SUPSPECIAL {$$ = new PI($4,$5,$2);}
