@@ -6,11 +6,11 @@ PI::PI():Element()
    nomDomaine = new string();
 }
 
-PI::PI(std::string& nom, std::list<Attribut*>* atts, string& nomDomaine ):Element()
+PI::PI(char* nom, std::list<Attribut*>* atts, char* nomDomaine ):Element()
 {
-    this->nom = nom;
+    this->nom = std::string(nom);
     this->atts = atts;
-    this->nomDomaine = nomDomaine;
+    this->nomDomaine = std::string (nomDomaine);
 }
 
 PI::PI(PI &pi): Element((Element)pi)

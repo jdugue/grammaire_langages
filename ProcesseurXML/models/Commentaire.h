@@ -6,7 +6,7 @@
 class Commentaire: public Element
 {
 public:
-    Commentaire(string&);
+    Commentaire(char*);
     ~Commentaire();
     Commentaire(Commentaire& commentaire);
     

@@ -9,7 +9,7 @@ class Attribut
 {
 	public:
 		Attribut(const Attribut &);        //constructeur de copie   
-		Attribut(string, string);
+		Attribut(char*, char*);
 		// string getValeur();
 		// string getNom();
 		~Attribut();
