@@ -22,3 +22,7 @@
 
 #tmp files
 *~
+
+#généré par bison
+xml.tab.c
+xml.output

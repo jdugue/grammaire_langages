@@ -22,37 +22,37 @@ PI::PI(PI &pi): Element((Element)pi)
 }
 
 
-std::string PI::getNom()
-{
-    return nom;
-}
+// std::string PI::getNom()
+// {
+//     return nom;
+// }
 
-std::string PI::getNomDomaine()
-{
-    return nom;
-}
+// std::string PI::getNomDomaine()
+// {
+//     return nom;
+// }
 
-std::list<Attribut*>* PI::getAtts()
-{
-    return atts;
-}
+// std::list<Attribut*>* PI::getAtts()
+// {
+//     return atts;
+// }
 
-std::string PI::toString()
-{
+// std::string PI::toString()
+// {
     
-    string buffer(format("<?"));
- //   buffer.append(this->nomDomaine); //todo
-    buffer.append(this->nom);
+//     string buffer(format("<?"));
+//  //   buffer.append(this->nomDomaine); //todo
+//     buffer.append(this->nom);
 
-    for (list<Attribut *>::iterator it = this->atts->begin(); it != this->atts->end(); it++)
-    {
-        buffer.append(" ");
-        buffer.append((*it)->toString());
-    }
-    buffer.append("/>");
+//     for (list<Attribut *>::iterator it = this->atts->begin(); it != this->atts->end(); it++)
+//     {
+//         buffer.append(" ");
+//         buffer.append((*it)->toString());
+//     }
+//     buffer.append("/>");
 
-    char *cstr = new char[buffer.length() + 1];
-    strcpy(cstr, buffer.c_str());
+//     char *cstr = new char[buffer.length() + 1];
+//     strcpy(cstr, buffer.c_str());
    
-    return 0;
-}
+//     return 0;
+// }

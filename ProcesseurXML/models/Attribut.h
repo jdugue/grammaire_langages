@@ -10,10 +10,10 @@ class Attribut
 	public:
 		Attribut(const Attribut &);        //constructeur de copie   
 		Attribut(string, string);
-		string getValeur();
-		string getNom();
+		// string getValeur();
+		// string getNom();
 		~Attribut();
-		string toString();
+		// string toString();
 
 		/* data */
 	private:

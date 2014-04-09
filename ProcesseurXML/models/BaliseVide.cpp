@@ -18,24 +18,24 @@ BaliseVide::~BaliseVide()
     
 } 
 
-string BaliseVide::toString()
-{
-	/*
-    string buffer(format("<"));
+// string BaliseVide::toString()
+// {
+	
+//     string buffer(format("<"));
 
-    // buffer.append(this->type);
-    buffer.append(":");
-    buffer.append(this->nom);
+//     // buffer.append(this->type);
+//     buffer.append(":");
+//     buffer.append(this->nom);
 
-    for (list<Attribut *>::iterator it = this->attributs->begin(); it != this->attributs->end(); it++)
-    {
-        buffer.append(" ");
-        buffer.append((*it)->toString());
-    }
-    buffer.append("/>");
+//     for (list<Attribut *>::iterator it = this->attributs->begin(); it != this->attributs->end(); it++)
+//     {
+//         buffer.append(" ");
+//         buffer.append((*it)->toString());
+//     }
+//     buffer.append("/>");
 
-    char *cstr = new char[buffer.length() + 1];
-    strcpy(cstr, buffer.c_str()); 
-    */
-    return 0;
-}
+//     char *cstr = new char[buffer.length() + 1];
+//     strcpy(cstr, buffer.c_str()); 
+    
+//     return 0;
+// }

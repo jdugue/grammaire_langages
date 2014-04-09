@@ -10,15 +10,18 @@ class BaliseDouble: public Balise
 {
 	public:
 		BaliseDouble();
+		BaliseDouble(char*, list<Element *> *, list<Attribut *> *, char*);
+
+		~BaliseDouble();
+
 		BaliseDouble (BaliseDouble& elemBalise);  //constructeur de copie   
 
+		/*
 		list<Element *> *getElements();
-
-		BaliseDouble(string &, list<Element *> *, list<Attribut *> *, string &);
-		~BaliseDouble();
 		string toString();
 		void addElement(list<Element*>*);
 		list<Element*> *getElementsByName(string name);
+		*/
 
 	private:
 		list<Element *> * elements;

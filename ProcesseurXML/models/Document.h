@@ -15,10 +15,10 @@ class Document
 		// Document(Element *);
 		Document(list<PI *> *, string *, list<Element *> *);
 		~Document();
-		Element *getElems();
-		string toString();
-		bool hasEnTete();
-		list<PI *> * getProlog();
+		// Element *getElems();
+		// string toString();
+		// bool hasEnTete();
+		// list<PI *> * getProlog();
 	private:
 		// string nom;
 		// int type;

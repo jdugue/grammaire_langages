@@ -12,7 +12,7 @@ public:
     ~BaliseVide();
     BaliseVide (BaliseVide& baliseVide);
 
-    string toString();
+    // string toString();
 
 private:
 
