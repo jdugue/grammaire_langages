@@ -1,14 +1,16 @@
 #include "commun.h"
 #include <iostream>
 #include <cstring>
+#include "models/Document.h"
 
 using namespace std;
 
-int xmlparse(void);
+int xmlparse(Document**);
 
 int main(void)
 {
-   int retour = xmlparse();
+		Document * doc;
+   int retour = xmlparse(&doc);
    if (!retour)
    {
       cout<<"Entrée standard reconnue"<<endl;

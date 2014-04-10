@@ -7,14 +7,14 @@
 #include <stdlib.h>
 #include "commun.h"
 #include "commun.h"
-#include "Document.h"
-#include "Attribut.h"
-#include "PI.h"
-#include "Text.h"
-#include "Element.h"
-#include "BaliseDouble.h"
-#include "BaliseVide.h"
-#include "Commentaire.h"
+#include "models/Document.h"
+#include "models/Attribut.h"
+#include "models/PI.h"
+#include "models/Text.h"
+#include "models/Element.h"
+#include "models/BaliseDouble.h"
+#include "models/BaliseVide.h"
+#include "models/Commentaire.h"
 #include "xml.tab.h"
 
 

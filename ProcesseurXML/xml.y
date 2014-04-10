@@ -7,21 +7,20 @@
 #include <cstdlib>
 using namespace std;
 #include "commun.h"
-#include "Document.h"
-#include "Attribut.h"
-#include "PI.h"
-#include "Text.h"
-#include "Element.h"
-#include "BaliseDouble.h"
-#include "BaliseVide.h"
-#include "Commentaire.h"
-
+#include "models/Document.h"
+#include "models/Attribut.h"
+#include "models/PI.h"
+#include "models/Text.h"
+#include "models/Element.h"
+#include "models/BaliseDouble.h"
+#include "models/BaliseVide.h"
+#include "models/Commentaire.h"
 
 extern char xmltext[];
 
 int xmllex(void);  
 
-void xmlerror(const char * msg)
+void xmlerror(Document ** doc, const char * msg)
 {
    fprintf(stderr,"%s\n",msg);
 }
@@ -53,6 +52,7 @@ void xmlerror(const char * msg)
 %type <text> cdata
 %type <s> doctype valeurs 
 
+%parse-param {Document ** doc}
 
 %%
 
