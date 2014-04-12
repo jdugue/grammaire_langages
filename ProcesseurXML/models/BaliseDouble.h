@@ -17,12 +17,6 @@ class BaliseDouble: public Balise
 
 		BaliseDouble (BaliseDouble& elemBalise);  //constructeur de copie   
 
-		/*
-		list<Element *> *getElements();
-		string toString();
-		void addElement(list<Element*>*);
-		list<Element*> *getElementsByName(string name);
-		*/
 
 	private:
 		list<Element *> * elements;
