@@ -8,7 +8,7 @@ Validation :: Validation()
 { 
   // types par défaut
   mapType.insert ( std::pair<string, string>("string","([^A-Za-z0-9_-])"));
-  mapType.insert ( std::pair<string, string>("date", "!^(0?\d|[12]\d|3[01])-(0?\d|1[012])-((?:19|20)\d{2})$!") );
+  mapType.insert ( std::pair<string, string>("date", "!^(0?\\d|[12]\\d|3[01])-(0?\\d|1[012])-((?:19|20)\\d{2})$!") );
   
 }
 
@@ -38,7 +38,7 @@ void constructionSchema(Document xsd){
 //les expressions de ces fils avc 1 ou 2, si possible.
 //}
   
-}
+//}
 
 int validationDocument(Document xml, Document xsd){
   // pour chaque element de mon document xml
