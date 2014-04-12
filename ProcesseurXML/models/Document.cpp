@@ -21,3 +21,16 @@ Document::~Document()
 {
 	// TODO
 }
+
+list<Element *>* Document:: getElems(){
+	return elems;
+
+}
+
+list<PI *>* Document::getProlog(){
+	return prolog;
+}
+
+string Document::getDoctype(){
+	return doctype;
+}

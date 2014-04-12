@@ -31,3 +31,15 @@ Balise::~Balise()
 {
 	// TODO
 }
+
+string Balise:: getNom(){
+  return nom;
+}
+
+list<Attribut*>* Balise::getAttributs(){
+  return attributs;
+}
+string Balise::getNomDomaine(){
+  return nomDomaine;
+}
+	

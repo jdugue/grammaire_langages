@@ -9,7 +9,7 @@ using namespace std;
 
 class Element
 {
-	public:
+    public:
     Element();
     Element(const Element &);
     virtual string Display()

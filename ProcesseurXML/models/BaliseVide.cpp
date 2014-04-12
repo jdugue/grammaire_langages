@@ -16,7 +16,7 @@ BaliseVide::BaliseVide(BaliseVide &baliseVide): Balise(baliseVide)
 
 BaliseVide::~BaliseVide()
 {
-	// TODO   
+	   
 } 
 
 string BaliseVide::Display ()
@@ -40,3 +40,4 @@ string BaliseVide::Display ()
 	
 	return mybalise;
 }
+
