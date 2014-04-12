@@ -17,8 +17,8 @@
 
 # Executables
 *.exe
-*.out
 *.app
+xmltool
 
 #tmp files
 *~
