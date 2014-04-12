@@ -2,9 +2,6 @@
 #define BALISE_DOUBLE_H
 
 #include "Balise.h"
-#include <list>
-#include <string>
-#include "Attribut.h"
 
 using namespace std;
 
@@ -16,7 +13,7 @@ class BaliseDouble: public Balise
  		BaliseDouble(char*&, list<Element *> *&, list<Attribut *> *&, char*& pNomDomaine);
 		~BaliseDouble();
 		BaliseDouble (BaliseDouble& elemBalise);   
-		string Display();
+		string Display(int indent);
 	       	list<Element*>* getElements();
 
 	private:

@@ -17,9 +17,16 @@ Text::Text(Text &text): Element((Element)text)
     //this->nom = Text.nom;
 }
 
-string Text::Display()
+string Text::Display(int indent)
 {
-	return string(this->contenu);
+	string disp = string();
+	
+	addTabs(disp,indent);
+	
+	disp.append(contenu);
+	disp.append("\n");
+	
+	return disp;
 }
 
 Text::~Text()

@@ -4,7 +4,6 @@
 #include <iostream>
 #include <list>
 #include <vector>
-#include "Element.h"
 #include "PI.h"
 
 using namespace std;
@@ -17,12 +16,12 @@ class Document
 		~Document();
 		string Display();
 		list<Element *>* getElems();
-		list<PI *>* getProlog();
+		list<PI*>* getProlog();
 		string getDoctype();
 		
 	private:
 		list<Element *> *elems;
-		list<PI *> *prolog;
+		list<PI*>* prolog;
 		string doctype;
 };
 

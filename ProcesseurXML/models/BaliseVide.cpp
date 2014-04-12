@@ -19,9 +19,14 @@ BaliseVide::~BaliseVide()
 	   
 } 
 
-string BaliseVide::Display ()
+string BaliseVide::Display (int indent)
 {
-	string mybalise = string ("<");
+	
+	string mybalise = string();
+	
+	addTabs(mybalise,indent);
+	
+	mybalise.append("<");
 	
 	if (!nomDomaine.empty())
 	{
@@ -36,7 +41,7 @@ string BaliseVide::Display ()
 		mybalise.append((*it)->toString());
 	}
 	
-	mybalise.append("/>");
+	mybalise.append("/>\n");
 	
 	return mybalise;
 }

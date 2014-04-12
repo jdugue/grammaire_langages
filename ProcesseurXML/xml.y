@@ -28,7 +28,6 @@ void xmlerror(Document ** doc, const char * msg)
 
 %union {
    char * s;
-   Document* doc;
    Element* elem;
    list<Element*>* lelem;
    PI* pi;
@@ -41,7 +40,6 @@ void xmlerror(Document ** doc, const char * msg)
 
 %token EGAL SLASH SUP SUPSPECIAL DOCTYPE COLON INFSPECIAL INF CDATABEGIN
 %token <s> VALEUR DONNEES COMMENT NOM CDATAEND 
-%type <doc> document
 %type <lelem> elements content
 %type <elem> element
 %type <pi> pi
@@ -57,7 +55,7 @@ void xmlerror(Document ** doc, const char * msg)
 %%
 
 document
- : entete doctype elements { $$=new Document($1,$2,$3);}
+ : entete doctype elements { *doc=new Document($1,$2,$3);}
  ;
 elements
  : elements element {$$=$1;$$->push_back($2);}

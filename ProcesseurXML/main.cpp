@@ -12,7 +12,8 @@ int xmlparse(Document**);
 int main(int argc, char **argv) 
 {
 	extern FILE *xmlin;
-
+	Document *doc;
+	
 	if (argc < 2)
 	{
 		fprintf(stderr,"No argument given\n");
@@ -41,16 +42,24 @@ int main(int argc, char **argv)
 		}
 		else
 		{
-		//cout <<"1";
 			int retour;
-			Document *doc;
-			//cout <<"2";
 			FILE *fid = fopen(argv[2], "r");
-			//cout <<"3";
+			if (fid == NULL)
+			{
+				fprintf(stderr,"Unable to open ");
+				fprintf(stderr,argv[2]);
+				return 1;
+			}
 			xmlin = fid;
 			retour = xmlparse(&doc);
-			//cout <<"4";
-			cout << doc->Display();
+			if (doc != NULL)
+			{
+				if (retour != 1)
+				{
+					cout << doc->Display() << endl;
+				}
+			}
+			fclose(fid);
 		}
 	}
 	else if (strcmp(argv[1],"-t") == 0)
@@ -69,19 +78,4 @@ int main(int argc, char **argv)
 			return 1;
 		}
 	}
-	
-	
-	
-	/*
-		Document * doc;
-   int retour = 0;//xmlparse(&doc);
-   if (!retour)
-   {
-      cout<<"Entrée standard reconnue"<<endl;
-   }
-   else
-   {
-      cout<<"Entrée standard non reconnue"<<endl;
-   }
-   return 1;*/
 }

@@ -20,10 +20,14 @@ Commentaire::~Commentaire()
 	// TODO
 }
 
-string Commentaire::Display ()
+string Commentaire::Display (int indent)
 {
-	string comment = string("<!--");
+	string comment = string();
+	
+	addTabs(comment,indent);
+	
+	comment.append("<!--");
 	comment.append(contenu);
-	comment.append("-->");
+	comment.append("-->\n");
 	return string();
 }

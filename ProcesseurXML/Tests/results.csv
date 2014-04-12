@@ -10,11 +10,11 @@ TestParsingBadMarkup1;Ok;Echec;Echec;Non testé;Echec
 TestParsingBadMarkup2;Ok;Echec;Echec;Non testé;Echec
 TestParsingBadMarkup3;Ok;Echec;Echec;Non testé;Echec
 TestParsingBadMarkup4;Ok;Echec;Echec;Non testé;Echec
-TestParsingCannotOpen;Echec;Ok;Echec;Non testé;Echec
+TestParsingCannotOpen;Ok;Ok;Ok;Non testé;Ok
 TestParsingLexicalError;Echec;Ok;Echec;Non testé;Echec
 TestParsingMissingMarkup;Echec;Ok;Echec;Non testé;Echec
-TestParsingSimple1;Ok;Echec;Non testé;Non testé;Echec
-TestParsingSimple2;Ok;Echec;Non testé;Non testé;Echec
+TestParsingSimple1;Echec;Echec;Non testé;Non testé;Echec
+TestParsingSimple2;Echec;Echec;Non testé;Non testé;Echec
 TestParsingSimple3;Ok;Echec;Non testé;Non testé;Echec
 TestParsingSimple4;Ok;Echec;Non testé;Non testé;Echec
 TestParsingSimple5;Ok;Echec;Non testé;Non testé;Echec

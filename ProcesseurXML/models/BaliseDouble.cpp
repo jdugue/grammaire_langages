@@ -30,9 +30,13 @@ BaliseDouble::~BaliseDouble()
 	
 }
 
-string BaliseDouble::Display ()
+string BaliseDouble::Display (int indent)
 {
-	string mybalise = string ("<");
+	string mybalise = string();
+	
+	addTabs(mybalise,indent);
+	
+	mybalise.append("<");
 	
 	if (!nomDomaine.empty())
 	{
@@ -47,13 +51,14 @@ string BaliseDouble::Display ()
 		mybalise.append((*it)->toString());
 	}
 	
-	mybalise.append(">");
+	mybalise.append(">\n");
 	
 	for (list<Element *>::iterator it = this->elements->begin(); it != this->elements->end(); it++)
 	{
-		(*it)->Display();
+		mybalise.append((*it)->Display(indent+1));
 	}
 	
+	addTabs(mybalise,indent);
 	mybalise.append("</");
 	
 	if (!nomDomaine.empty())
@@ -63,7 +68,7 @@ string BaliseDouble::Display ()
 	}
 	
 	mybalise.append(nom);
-	mybalise.append(">");
+	mybalise.append(">\n");
 	
 	return mybalise;
 }

@@ -1,9 +1,6 @@
 #ifndef PI_H
 #define PI_H
 #include "Element.h"
-#include "Attribut.h"
-#include <list>
-#include <string>
 
 class PI: public Element
 {
@@ -12,7 +9,7 @@ class PI: public Element
     PI(char*, list<Attribut*>*, char* = (char*)"");
     ~PI();
     PI(PI& pi);
-    string Display ();
+    string Display (int indent);
 
 	protected:
 		string nom;

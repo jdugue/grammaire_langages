@@ -27,10 +27,14 @@ PI::~PI()
 	// TODO
 }
 
-string PI::Display()
+string PI::Display(int indent)
 {
-	string buffer("<?");
-	/*
+	string buffer = string();
+	
+	addTabs(buffer,indent);
+	
+	buffer.append("<?");
+	
 	if (!nomDomaine.empty())
 	{
 		buffer.append(this->nomDomaine);
@@ -43,7 +47,7 @@ string PI::Display()
 		buffer.append(" ");
 		buffer.append((*it)->toString());
 	}
-	buffer.append("?>");
-	*/
+	buffer.append("?>\n");
+	
 	return buffer;
 }

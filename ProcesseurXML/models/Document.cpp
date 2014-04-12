@@ -7,7 +7,9 @@ using namespace std;
 
 Document::Document()
 {
-
+	this->prolog = new list<PI*>();
+	this->elems = new list<Element*>();
+	this->doctype = string();
 }
 
 Document::Document(list<PI *>* prolog, char* doctype, list<Element *> *elems)
@@ -24,21 +26,16 @@ Document::~Document()
 
 string Document::Display()
 {
-	string buffer("vide\n");
-	this->prolog = new list<PI *>();
-	this->prolog->push_back(new PI());
-	cout << this->prolog->empty();
-	/*this->prolog->end();
+	string buffer = string();
 	for (list<PI *>::iterator it = this->prolog->begin(); it != this->prolog->end(); it++)
 	{
-		cout<<"OULALA"<<endl;
-		buffer.append((*it)->Display());
-	}*/
-	/*buffer.append(doctype);
+		buffer.append((*it)->Display(0));
+	}
+	//buffer.append(doctype);
 	for (list<Element *>::iterator it = this->elems->begin(); it != this->elems->end(); it++)
 	{
-		buffer.append((*it)->Display());
-	}*/
+		buffer.append((*it)->Display(0));
+	}
 	return buffer;
 }
 

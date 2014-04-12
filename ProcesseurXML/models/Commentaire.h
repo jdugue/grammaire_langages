@@ -1,7 +1,6 @@
 #ifndef COMMENTAIRE_H
 #define COMMENTAIRE_H
 #include "Element.h"
-#include <string>
 
 class Commentaire: public Element
 {
@@ -10,7 +9,7 @@ class Commentaire: public Element
     Commentaire(char*&);
     ~Commentaire();
     Commentaire(Commentaire& commentaire);
-    string Display ();
+    string Display (int indent);
 
 	protected:
 		string contenu;

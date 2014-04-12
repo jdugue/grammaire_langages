@@ -3,6 +3,8 @@
 
 #include <string>
 #include <stdio.h>
+#include "UsefullFuncs.h"
+
 using namespace std;
 
 class Attribut
