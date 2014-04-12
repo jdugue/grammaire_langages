@@ -2,7 +2,7 @@
 #include <iostream>
 #include <fstream>
 #include <typeinfo>
-#include <string.h>
+#include <string.h
 using namespace std;
 
 Document::Document()
