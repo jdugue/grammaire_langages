@@ -1,5 +1,4 @@
 %{
-
 #include <stack>
 #include <list>
 #include <cstring>
@@ -22,7 +21,7 @@ int xmllex(void);
 
 void xmlerror(Document ** doc, const char * msg)
 {
-   fprintf(stderr,"%s\n",msg);
+   fprintf(stderr,"XML.Y : %s\n",msg);
 }
 
 %}
@@ -53,6 +52,7 @@ void xmlerror(Document ** doc, const char * msg)
 %type <s> doctype valeurs 
 
 %parse-param {Document ** doc}
+
 
 %%
 
@@ -97,7 +97,7 @@ valeurs
  ;
 
 pi
- : INFSPECIAL NOM atts SUPSPECIAL {$$ = new PI($2,$3);}
+ :INFSPECIAL NOM atts SUPSPECIAL {$$ = new PI($2,$3);}
  |INFSPECIAL NOM COLON NOM atts SUPSPECIAL {$$ = new PI($4,$5,$2);}
  ;
 atts

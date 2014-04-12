@@ -19,6 +19,7 @@ ${COMMUN}:${OBJETS} xml.l xml.y
 	${COMP} -c xml.tab.c
 	${COMP} -c lex.xml.c
 	#${EDL} -std=c++11 -g -o xmltool ${OBJETS} xml.tab.c lex.xml.c
+	#${EDL} -std=c++0x -g -DYYDEBUG -DFLEXDEBUG -o xmltool ${OBJETS} xml.tab.c lex.xml.c
 	${EDL} -std=c++0x -g -o xmltool ${OBJETS} xml.tab.c lex.xml.c
 	touch commun
 ${EFFACE}:

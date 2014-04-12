@@ -7,10 +7,12 @@
 
 using namespace std;
 
-int xmlparse(Document**);
-
+int xmlparse(Document**);    
+    
 int main(int argc, char **argv) 
 {
+	extern FILE *xmlin;
+
 	if (argc < 2)
 	{
 		fprintf(stderr,"No argument given\n");
@@ -36,6 +38,19 @@ int main(int argc, char **argv)
 		{
 			fprintf(stderr,"You must provide an argument to the command -p\n");
 			return 1;
+		}
+		else
+		{
+		//cout <<"1";
+			int retour;
+			Document *doc;
+			//cout <<"2";
+			FILE *fid = fopen(argv[2], "r");
+			//cout <<"3";
+			xmlin = fid;
+			retour = xmlparse(&doc);
+			//cout <<"4";
+			cout << doc->Display();
 		}
 	}
 	else if (strcmp(argv[1],"-t") == 0)

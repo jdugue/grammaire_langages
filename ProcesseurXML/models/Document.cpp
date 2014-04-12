@@ -24,15 +24,20 @@ Document::~Document()
 
 string Document::Display()
 {
-	string buffer;
+	string buffer("vide\n");
+	this->prolog = new list<PI *>();
+	this->prolog->push_back(new PI());
+	cout << this->prolog->empty();
+	/*this->prolog->end();
 	for (list<PI *>::iterator it = this->prolog->begin(); it != this->prolog->end(); it++)
 	{
+		cout<<"OULALA"<<endl;
 		buffer.append((*it)->Display());
-	}
-	buffer.append(doctype);
+	}*/
+	/*buffer.append(doctype);
 	for (list<Element *>::iterator it = this->elems->begin(); it != this->elems->end(); it++)
 	{
 		buffer.append((*it)->Display());
-	}
+	}*/
 	return buffer;
 }

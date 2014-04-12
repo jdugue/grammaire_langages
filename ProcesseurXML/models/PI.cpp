@@ -30,7 +30,7 @@ PI::~PI()
 string PI::Display()
 {
 	string buffer("<?");
-	
+	/*
 	if (!nomDomaine.empty())
 	{
 		buffer.append(this->nomDomaine);
@@ -44,6 +44,6 @@ string PI::Display()
 		buffer.append((*it)->toString());
 	}
 	buffer.append("?>");
-	
+	*/
 	return buffer;
 }

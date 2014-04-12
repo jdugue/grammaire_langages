@@ -22,7 +22,10 @@ Attribut::~Attribut()
 
 string Attribut::toString()
 {
-	return string();
+	string buffer(nom);
+	buffer.append("=");
+	buffer.append(valeur);
+	return buffer;
 }
 
 string Attribut::getValeur()
