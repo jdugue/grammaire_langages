@@ -18,3 +18,25 @@ BaliseVide::~BaliseVide()
 {
 	// TODO   
 } 
+
+string BaliseVide::Display ()
+{
+	string mybalise = string ("<");
+	
+	if (!nomDomaine.empty())
+	{
+		mybalise.append(nomDomaine);
+		mybalise.append(":");
+	}
+	mybalise.append(nom);
+
+	for (list<Attribut *>::iterator it = this->attributs->begin(); it != this->attributs->end(); it++)
+	{
+		mybalise.append(" ");
+		mybalise.append((*it)->toString());
+	}
+	
+	mybalise.append("/>");
+	
+	return mybalise;
+}

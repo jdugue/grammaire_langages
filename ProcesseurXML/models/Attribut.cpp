@@ -19,3 +19,8 @@ Attribut::~Attribut()
 {
 	// TODO
 }
+
+string Attribut::toString()
+{
+	return string();
+}

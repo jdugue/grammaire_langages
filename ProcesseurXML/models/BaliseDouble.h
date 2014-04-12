@@ -16,7 +16,7 @@ class BaliseDouble: public Balise
 		~BaliseDouble();
 
 		BaliseDouble (BaliseDouble& elemBalise);  //constructeur de copie   
-
+		string Display();
 
 	private:
 		list<Element *> * elements;

@@ -12,9 +12,7 @@ class BaliseVide: public Balise
 		BaliseVide(char*& , list<Attribut*>*&);
     ~BaliseVide();
     BaliseVide (BaliseVide& baliseVide);
-
-	private:
-
+    string Display();
 };
 
 #endif

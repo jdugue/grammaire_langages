@@ -2,12 +2,12 @@
 
 Text::Text():Element()
 {	
-	this->contenu=std::string(contenu);
+	this->contenu=string(contenu);
 }
 
 Text::Text(char* contenu):Element()
 {
-	this->contenu=std::string(contenu);
+	this->contenu=string(contenu);
 }
 
 Text::Text(Text &text): Element((Element)text)
@@ -15,4 +15,14 @@ Text::Text(Text &text): Element((Element)text)
     //TODO
     //this->attributs = Text.lesAttributs;
     //this->nom = Text.nom;
+}
+
+string Text::Display()
+{
+	return string(this->contenu);
+}
+
+Text::~Text()
+{
+	// TODO
 }

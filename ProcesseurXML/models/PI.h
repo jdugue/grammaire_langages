@@ -12,8 +12,7 @@ class PI: public Element
     PI(char*, list<Attribut*>*, char* = (char*)"");
     ~PI();
     PI(PI& pi);
-    
-    // string toString();
+    string Display ();
 
 	protected:
 		string nom;

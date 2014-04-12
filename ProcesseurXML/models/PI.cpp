@@ -1,16 +1,17 @@
 #include "PI.h"
+using namespace std;
 
 PI::PI():Element()
 {
-   nom = std::string();
-   nomDomaine = std::string();
+   nom = string();
+   nomDomaine = string();
 }
 
-PI::PI(char* nom, std::list<Attribut*>* atts, char* nomDomaine ):Element()
+PI::PI(char* nom, list<Attribut*>* atts, char* nomDomaine ):Element()
 {
-    this->nom = std::string(nom);
+    this->nom = string(nom);
     this->atts = atts;
-    this->nomDomaine = std::string (nomDomaine);
+    this->nomDomaine = string(nomDomaine);
 }
 
 PI::PI(PI &pi): Element((Element)pi)
@@ -21,22 +22,28 @@ PI::PI(PI &pi): Element((Element)pi)
     this->nomDomaine = pi.nomDomaine;
 }
 
-// std::string PI::toString()
-// {
-    
-//     string buffer(format("<?"));
-//  //   buffer.append(this->nomDomaine); //todo
-//     buffer.append(this->nom);
+PI::~PI()
+{
+	// TODO
+}
 
-//     for (list<Attribut *>::iterator it = this->atts->begin(); it != this->atts->end(); it++)
-//     {
-//         buffer.append(" ");
-//         buffer.append((*it)->toString());
-//     }
-//     buffer.append("/>");
+string PI::Display()
+{
+	string buffer("<?");
+	
+	if (!nomDomaine.empty())
+	{
+		buffer.append(this->nomDomaine);
+		buffer.append(":"); 
+	}	
+	buffer.append(this->nom);
 
-//     char *cstr = new char[buffer.length() + 1];
-//     strcpy(cstr, buffer.c_str());
-   
-//     return 0;
-// }
+	for (list<Attribut *>::iterator it = this->atts->begin(); it != this->atts->end(); it++)
+	{
+		buffer.append(" ");
+		buffer.append((*it)->toString());
+	}
+	buffer.append("?>");
+	
+	return buffer;
+}

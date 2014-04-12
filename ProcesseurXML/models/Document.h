@@ -6,6 +6,7 @@
 #include <vector>
 #include "Element.h"
 #include "PI.h"
+
 using namespace std;
 
 class Document
@@ -14,6 +15,7 @@ class Document
 		Document();
 		Document(list<PI *> *, char*, list<Element *> *);
 		~Document();
+		Display();
 		
 	private:
 		list<Element *> *elems;
