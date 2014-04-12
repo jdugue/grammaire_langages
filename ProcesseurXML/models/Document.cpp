@@ -21,3 +21,18 @@ Document::~Document()
 {
 	// TODO
 }
+
+string Document::Display()
+{
+	string buffer;
+	for (list<PI *>::iterator it = this->prolog->begin(); it != this->prolog->end(); it++)
+	{
+		buffer.append((*it)->Display());
+	}
+	buffer.append(doctype);
+	for (list<Element *>::iterator it = this->elems->begin(); it != this->elems->end(); it++)
+	{
+		buffer.append((*it)->Display());
+	}
+	return buffer;
+}
