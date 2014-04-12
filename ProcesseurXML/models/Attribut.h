@@ -11,6 +11,8 @@ class Attribut
 		Attribut(const Attribut &); 
 		Attribut(char*, char*);
 		~Attribut();
+		string getNom();
+		string getValeur();
 		string toString();
 
 	private:

@@ -17,10 +17,20 @@ Attribut::Attribut(const Attribut& attr)
 
 Attribut::~Attribut()
 {
-	// TODO
+	
 }
 
 string Attribut::toString()
 {
 	return string();
+}
+
+string Attribut::getValeur()
+{
+  return valeur;
+}
+
+string Attribut::getNom()
+{
+  return nom;
 }

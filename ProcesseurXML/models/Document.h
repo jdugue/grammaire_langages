@@ -15,7 +15,7 @@ class Document
 		Document();
 		Document(list<PI *> *, char*, list<Element *> *);
 		~Document();
-		Display();
+		string Display();
 		
 	private:
 		list<Element *> *elems;
