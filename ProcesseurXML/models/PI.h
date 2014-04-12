@@ -7,21 +7,18 @@
 
 class PI: public Element
 {
-public:
+	public:
     PI();
     PI(char*, list<Attribut*>*, char* = (char*)"");
     ~PI();
     PI(PI& pi);
     
-    // string getNom();
-    // list<Attribut*>* getAtts();
-    
     // string toString();
 
-protected:
-	string nom;
+	protected:
+		string nom;
     string nomDomaine;
-	list<Attribut*>* atts;
+		list<Attribut*>* atts;
 };
 
 #endif

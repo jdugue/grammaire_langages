@@ -5,18 +5,14 @@
 
 class Commentaire: public Element
 {
-public:
-	Commentaire();
+	public:
+		Commentaire();
     Commentaire(char*&);
     ~Commentaire();
     Commentaire(Commentaire& commentaire);
-    
-    string getContenu();
-    
-    string toString();
 
-protected:
-	string contenu;
+	protected:
+		string contenu;
 };
 
 #endif

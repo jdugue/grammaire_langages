@@ -6,18 +6,14 @@
 
 class Text: public Element
 {
-public:
+	public:
     Text();
     Text(char*);
     ~Text();
     Text(Text& text);
-    
-    string getContenu();
-    
-    string toString();
 
-protected:
-	string contenu;
+	protected:
+		string contenu;
 };
 
 #endif

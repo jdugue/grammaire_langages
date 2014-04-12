@@ -4,63 +4,14 @@
 #include <iostream>
 #include <list>
 #include "Attribut.h"
-// #include <vector>
+
 using namespace std;
 
 class Element
 {
-public:
-    //variable contenu = de la balise ouvrante a la fermante incluses
+	public:
     Element();
-    Element(const Element &) {}       //constructeur de copie
-    virtual string toString()
-    {
-        cout << "YOU SHOULDN'T BE HERE" << endl;
-        return 0;
-    }
-    virtual list<Element *> *getLesElements()
-    {
-        cout << "YOU SHOULDN'T BE HERE" << endl;
-        return 0;
-    }
-    virtual string getName()
-    {
-        cout << "YOU SHOULDN'T BE HERE" << endl;
-        return 0;
-    }
-    virtual list<Attribut *> *getLesAttributs()
-    {
-        cout << "YOU SHOULDN'T BE HERE" << endl;
-        return 0;
-    }
-
-    virtual string getType()
-    {
-        cout << "YOU SHOULDN'T BE HERE" << endl;
-        return 0;
-    }
-    virtual void addElement(list<Element *> *)
-    {
-        cout << "YOU SHOULDN'T BE HERE OLOL" << endl;
-    }
-    virtual list<Element *> *getElementsByName(string )
-    {
-        cout << "YOU SHOULDN'T BE HERE" << endl;
-        return 0;
-    }
-    virtual string getContenu()
-    {
-        cout << "YOU SHOULDN'T BE HERE" << endl;
-        return 0;
-    }
-    virtual int getCodeType()
-    {
-        cout << "YOU SHOULDN'T BE HERE" << endl;
-        return 0;
-    }
-private:
-    // vector<Element> elementsIncluded;
-
+    Element(const Element &);
 };
 
 #endif

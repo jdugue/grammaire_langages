@@ -21,22 +21,6 @@ PI::PI(PI &pi): Element((Element)pi)
     this->nomDomaine = pi.nomDomaine;
 }
 
-
-// std::string PI::getNom()
-// {
-//     return nom;
-// }
-
-// std::string PI::getNomDomaine()
-// {
-//     return nom;
-// }
-
-// std::list<Attribut*>* PI::getAtts()
-// {
-//     return atts;
-// }
-
 // std::string PI::toString()
 // {
     

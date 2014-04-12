@@ -11,57 +11,23 @@ Balise::Balise():Element()
 Balise::Balise(char*& pNom, std::list<Attribut*> *&attributs, char*& pNomDomaine):Element()
 {
 	nom = std::string(pNom);
-    nomDomaine = std::string(pNomDomaine);
+	nomDomaine = std::string(pNomDomaine);
 	this->attributs = attributs;
 }
 
 Balise::Balise(char*& pNom, std::list<Attribut*> *&attributs):Element()
 {
 	nom = std::string(pNom);
-    nomDomaine = std::string();
+	nomDomaine = std::string();
 	this->attributs = attributs;
 }
 
 Balise::Balise(const Balise &balise): Element((Element)balise)
 {
 	//TODO
-    //this->attributs = elemBaliseOrph.lesAttributs;
-    //this->nom = elemBaliseOrph.nom;
 }
 
-Balise::~Balise(){}
-
-/*
-std::string Balise::getNom()
+Balise::~Balise()
 {
-	return nom;
+	// TODO
 }
-
-std::list<Attribut *> * Balise::getAttributs()
-{
-	return attributs;
-}
-
-//std::string Balise::toString()
-//{
-	
-    string buffer(format("<"));
-
-    buffer.append(this->type);
-    buffer.append(":");
-    buffer.append(this->nom);
-
-    for (list<Attribut *>::iterator it = this->lesAttributs->begin(); it != this->lesAttributs->end(); it++)
-    {
-        buffer.append(" ");
-        buffer.append((*it)->toString());
-    }
-    buffer.append("/>");
-
-    char *cstr = new char[buffer.length() + 1];
-    strcpy(cstr, buffer.c_str());
-    
-//    return 0;
-//}
-
-*/

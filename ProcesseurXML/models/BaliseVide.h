@@ -7,15 +7,13 @@
 
 class BaliseVide: public Balise
 {
-public:
+	public:
     BaliseVide(char*& , list<Attribut*>*&, char*& pNomDomaine);
-	BaliseVide(char*& , list<Attribut*>*&);
+		BaliseVide(char*& , list<Attribut*>*&);
     ~BaliseVide();
     BaliseVide (BaliseVide& baliseVide);
 
-    // string toString();
-
-private:
+	private:
 
 };
 

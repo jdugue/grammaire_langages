@@ -11,30 +11,11 @@ Attribut::Attribut(char* pNom, char* pValeur)
 
 Attribut::Attribut(const Attribut& attr)
 {
-    // this->valeur = attr.getValeur();
-    // this->nom = attr.getNom();
-    cout<< "..."<<endl<<endl;
+    this->valeur = attr.valeur;
+    this->nom = attr.nom;
 }
-
-// string Attribut::getValeur()
-// {
-//     return this->valeur;
-// }
-
-// string Attribut::getNom()
-// {
-//     return this->nom;
-// }
 
 Attribut::~Attribut()
 {
-
+	// TODO
 }
-
-
-//string Attribut::toString()
-//{
-//	string toString = "";
-//    return toString.append(this->nom).append("=").append("\"").append(this->valeur).append("\"");
-//}
-

@@ -7,23 +7,17 @@
 
 class Balise: public Element
 {
-public:
+	public:
     Balise(char*&, list<Attribut*>*&, char*&);
-	Balise(char*&, list<Attribut*>*&);
-	Balise();
+		Balise(char*&, list<Attribut*>*&);
+		Balise();
     ~Balise();
     Balise(const Balise& balise);
-    
-    /*list<Attribut *> * getAttributs();
-    string getNom();
-    
-    virtual string toString() = 0;
-	*/
 
-protected:
-	string nom;
-	list<Attribut*> *attributs;
-	string nomDomaine;
+	protected:
+		string nom;
+		list<Attribut*> *attributs;
+		string nomDomaine;
 };
 
 #endif

@@ -8,14 +8,10 @@ using namespace std;
 class Attribut
 {
 	public:
-		Attribut(const Attribut &);        //constructeur de copie   
+		Attribut(const Attribut &); 
 		Attribut(char*, char*);
-		// string getValeur();
-		// string getNom();
 		~Attribut();
-		// string toString();
 
-		/* data */
 	private:
 		string valeur;
 		string nom;

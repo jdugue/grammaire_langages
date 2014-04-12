@@ -12,16 +12,10 @@ class Document
 {
 	public:
 		Document();
-		// Document(Element *);
 		Document(list<PI *> *, char*, list<Element *> *);
 		~Document();
-		// Element *getElems();
-		// string toString();
-		// bool hasEnTete();
-		// list<PI *> * getProlog();
+		
 	private:
-		// string nom;
-		// int type;
 		list<Element *> *elems;
 		list<PI *> *prolog;
 		string doctype;
