@@ -18,7 +18,8 @@ ${COMMUN}:${OBJETS} xml.l xml.y
 	bison -p xml --debug --verbose --defines=xml.tab.h xml.y
 	${COMP} -c xml.tab.c
 	${COMP} -c lex.xml.c
-	${EDL} -std=c++11 -g -o xmltool ${OBJETS} xml.tab.c lex.xml.c
+	#${EDL} -std=c++11 -g -o xmltool ${OBJETS} xml.tab.c lex.xml.c
+	${EDL} -std=c++0x -g -o xmltool ${OBJETS} xml.tab.c lex.xml.c
 	touch commun
 ${EFFACE}:
 	${RM} -rf xml.tab.c lex.xml.c xml.tab.h xml.output xmltool commun
