@@ -24,3 +24,41 @@ BaliseDouble::~BaliseDouble()
 {
 	//TODO
 }
+
+string BaliseDouble::Display ()
+{
+	string mybalise = string ("<");
+	
+	if (!nomDomaine.empty())
+	{
+		mybalise.append(nomDomaine);
+		mybalise.append(":");
+	}
+	mybalise.append(nom);
+
+	for (list<Attribut *>::iterator it = this->attributs->begin(); it != this->attributs->end(); it++)
+	{
+		mybalise.append(" ");
+		mybalise.append((*it)->toString());
+	}
+	
+	mybalise.append(">");
+	
+	for (list<Element *>::iterator it = this->elements->begin(); it != this->elements->end(); it++)
+	{
+		(*it)->Display();
+	}
+	
+	mybalise.append("</");
+	
+	if (!nomDomaine.empty())
+	{
+		mybalise.append(nomDomaine);
+		mybalise.append(":");
+	}
+	
+	mybalise.append(nom);
+	mybalise.append(">");
+	
+	return mybalise;
+}

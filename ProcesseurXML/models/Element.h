@@ -12,6 +12,11 @@ class Element
 	public:
     Element();
     Element(const Element &);
+    virtual string Display()
+    {
+    	return string();
+    }
+    virtual ~Element(){}
 };
 
 #endif

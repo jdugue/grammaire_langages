@@ -10,6 +10,7 @@ class Commentaire: public Element
     Commentaire(char*&);
     ~Commentaire();
     Commentaire(Commentaire& commentaire);
+    string Display ();
 
 	protected:
 		string contenu;

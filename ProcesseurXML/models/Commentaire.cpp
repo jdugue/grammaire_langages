@@ -19,3 +19,11 @@ Commentaire::~Commentaire()
 {
 	// TODO
 }
+
+string Commentaire::Display ()
+{
+	string comment = string("<!--");
+	comment.append(contenu);
+	comment.append("-->");
+	return string();
+}

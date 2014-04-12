@@ -13,6 +13,10 @@ class Balise: public Element
 		Balise();
     ~Balise();
     Balise(const Balise& balise);
+    virtual string Display()
+    {
+    	return string();
+    }
 
 	protected:
 		string nom;

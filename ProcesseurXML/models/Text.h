@@ -11,6 +11,7 @@ class Text: public Element
     Text(char*);
     ~Text();
     Text(Text& text);
+    string Display();
 
 	protected:
 		string contenu;
