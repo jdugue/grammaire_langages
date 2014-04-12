@@ -41,3 +41,16 @@ string Document::Display()
 	}*/
 	return buffer;
 }
+
+list<Element *>* Document:: getElems(){
+	return elems;
+
+}
+
+list<PI *>* Document::getProlog(){
+	return prolog;
+}
+
+string Document::getDoctype(){
+	return doctype;
+}

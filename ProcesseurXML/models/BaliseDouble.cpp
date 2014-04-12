@@ -22,7 +22,12 @@ BaliseDouble::BaliseDouble(BaliseDouble &elemBalise): Balise(elemBalise)
 
 BaliseDouble::~BaliseDouble()
 {
-	//TODO
+  //todo
+  //for (list<Attribut *>::iterator it = this->attributs->begin(); it != this->attributs->end(); it++)
+  //	{
+  //	  delete &it;
+  //	}
+	
 }
 
 string BaliseDouble::Display ()
@@ -61,4 +66,8 @@ string BaliseDouble::Display ()
 	mybalise.append(">");
 	
 	return mybalise;
+}
+
+list<Element*>* BaliseDouble::getElements(){
+  return elements;
 }

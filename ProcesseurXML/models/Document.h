@@ -16,6 +16,9 @@ class Document
 		Document(list<PI *> *, char*, list<Element *> *);
 		~Document();
 		string Display();
+		list<Element *>* getElems();
+		list<PI *>* getProlog();
+		string getDoctype();
 		
 	private:
 		list<Element *> *elems;

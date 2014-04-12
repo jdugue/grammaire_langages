@@ -14,7 +14,8 @@ Validation :: Validation()
 
 void constructionSchema(Document xsd){
 	list<Element *>* liste = xsd.getElems();
-	list<Element *>::iterator it = liste->begin(); 
+	list<Element *>::iterator it = liste->begin();
+	
 
  
 };
