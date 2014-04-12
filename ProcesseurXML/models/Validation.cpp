@@ -8,45 +8,51 @@ Validation :: Validation()
 { 
   // types par défaut
   mapType.insert ( std::pair<string, string>("string","([^A-Za-z0-9_-])"));
-  mapType.insert ( std::pair<string, string>("date", "!^(0?\\d|[12]\\d|3[01])-(0?\\d|1[012])-((?:19|20)\\d{2})$!") );
+  mapType.insert ( std::pair<string, string>("date", "!^(0?\\d|[12]\\d|3[01])-(0?\\d|1[012])-((?:1
+9|20)\\d{2})$!") );
   
 }
 
 void constructionSchema(Document xsd){
 	list<Element *>* liste = xsd.getElems();
-	list<Element *>::iterator it = liste->begin(); 
+	list<Element *>::iterator it = liste->begin();
+	// chercher la première balise element
+	//for (it != liste->end(); it++){
+	//	if (l'element est une balise element
+	//constructionExpression(it);
+	//}
+}
 
+int constructionExpression(Element* elm){
+//if mon element est une balise vide 
+	//if type = String ou date
+	   //mapElm.insert(pair{nom, type});
+	//if type est une occurence To do : réfléchir à  la construction de l'expression
+	   // puis insérer dans mapType{nom, expression régulière}
  
-};
-//Fonction parse (element, T, mapT, mapE){
-//Si mon element est une balise vide
-//Insérer dans mapE : 
-//{nom, type}
-//Insérer dans mapT : 
-//{nom, expression régulière}
-		// to do : traiter les références
-//Sinon // mon element est une balise double
+//Sinon (mon element est une balise double)
 //	Je parcours la liste de ces element 
 //	Si je rencontre : complex type
 //		Je parcours la liste des elements de complexe type
 //			Si je rencontre choice
-//T = 1; // pour choice
+//          T = 1;
 
-//			Sinon, je rencontre : sequence
-//			T = 2; // pour sequence
-//	parse (element(sequence ou choice), 1 ou 2, mapT, mapE)
-//Je construit l’expression régulière de mon element en concaténant 
-//les expressions de ces fils avc 1 ou 2, si possible.
-//}
-  
-//}
+//			Sinon (je rencontre : sequence)
+//			T = 2;
+//	        constructionExpression(element(sequence ou choice), T)
+//   Je parcour les fils à le recherche de leur expression régulière;  
+//    Je construit l’expression régulière de mon element en concaténant 
+//  les expressions de ces fils avc 1 ou 2, si possible.
+	return 0;
+}
+
 
 int validationDocument(Document xml, Document xsd){
   // pour chaque element de mon document xml
   // générer la chaine de caractère correspondante
-  // tester si la chaine 
-  
+  // tester si la chaine  
   // 
+  
 
   return 0;
 }

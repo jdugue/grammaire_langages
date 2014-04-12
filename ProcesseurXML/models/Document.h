@@ -20,8 +20,8 @@ class Document
 		string getDoctype();
 		
 	private:
-		list<Element *> *elems;
-		list<PI*>* prolog;
+  	list<Element *> *elems;
+		list<PI *> *prolog;
 		string doctype;
 };
 

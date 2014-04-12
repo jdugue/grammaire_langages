@@ -25,5 +25,6 @@ class Validation
       map<nom, regex> mapType;
       int validationDocument(Document xml, Document xsd);
       void constructionSchema(Document xsd);
+	  int constructionExpression(Element* elm);
       
 };
