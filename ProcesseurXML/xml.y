@@ -55,7 +55,7 @@ void xmlerror(Document ** doc, const char * msg)
 %%
 
 document
- : entete doctype elements {*doc=new Document($1,$2,$3);}
+ : entete doctype entete elements {*doc=new Document($1,$2,$3,$4);}
  
 elements
  : elements element {$$=$1;$$->push_back($2);}
@@ -88,7 +88,7 @@ element
 content
  : content element {$$=$1;$$->push_back($2);}  
  | content cdata {$$=$1;$$->push_back($2);}  
- | content DONNEES {$$=$1;$$->push_back(new Text($2));}  
+ | content DONNEES {$$=$1;$$->push_back(new Text($2,1));}  
  | content COMMENT  {$$=$1;$$->push_back(new Commentaire($2));}        
  | /* vide */    {$$ = new list<Element*>();}          
  ;
@@ -99,7 +99,11 @@ entete
 
 doctype
 :DOCTYPE NOM NOM valeurs SUP{char str[1000];
-					strcpy(str,$3);
+					strcpy(str,"<!DOCTYPE ");
+					strcat(str,$2);
+					strcat(str," ");
+					strcat(str,$3);
+					strcat(str," ");
 					strcat(str,$4);
 					strcat(str,">");
 					$$=str;}
@@ -108,7 +112,7 @@ doctype
 					$$ = str;}
 ;     
 valeurs 
- : valeurs VALEUR {$$=$1; strcat($$,$2) ;}
+ : valeurs VALEUR {$$=$1; strcat($$,"\""); strcat($$,$2); strcat($$,"\"");}
  |/* vide */ {$$ = new char[1000];}
  ;
 
@@ -125,6 +129,6 @@ att
  | NOM COLON NOM EGAL VALEUR { $$ = new Attribut($3,$5);}
  ;
 cdata
- : CDATABEGIN CDATAEND {$$= new Text($2);}
+ : CDATABEGIN CDATAEND {$$= new Text($2,2);}
  ;
 

@@ -22,12 +22,5 @@ Commentaire::~Commentaire()
 
 string Commentaire::Display (int indent)
 {
-	string comment = string();
-	
-	addTabs(comment,indent);
-	
-	comment.append("<!--");
-	comment.append(contenu);
-	comment.append("-->");
-	return string();
+	return contenu;
 }

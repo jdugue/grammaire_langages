@@ -239,10 +239,10 @@ Description :
 Parsage d'un fichier XML avec en-tête, bien formé.
 -----------------------------------------------------------
 ../xmltool -p ../files/with_header.xml
-                                       Return Code : FAILED
-                                       Stdout      : FAILED
+                                       Return Code : PASSED
+                                       Stdout      : PASSED
                                        --------------------
-                                       Global      : FAILED
+                                       Global      : PASSED
 -----------------------------------------------------------
 
 -----------------------------------------------------------
@@ -253,10 +253,10 @@ Parsage d'un fichier XML avec en-tête, bien formé et
 comportant un commentaire.
 -----------------------------------------------------------
 ../xmltool -p ../files/with_header_and_comment.xml
-                                       Return Code : FAILED
-                                       Stdout      : FAILED
+                                       Return Code : PASSED
+                                       Stdout      : PASSED
                                        --------------------
-                                       Global      : FAILED
+                                       Global      : PASSED
 -----------------------------------------------------------
 
 -----------------------------------------------------------
@@ -267,7 +267,7 @@ Parsage d'un fichier XML avec en-tête, bien formé et
 comportant un commentaire et une section CDATA.
 -----------------------------------------------------------
 ../xmltool -p ../files/with_header_comment_and_CDATA.xml
-                                       Return Code : FAILED
+                                       Return Code : PASSED
                                        Stdout      : FAILED
                                        --------------------
                                        Global      : FAILED
@@ -484,8 +484,8 @@ de la séquence est manquant.
                                        Global      : FAILED
 -----------------------------------------------------------
 
-Passed tests     : 20
-Failed tests     : 14
+Passed tests     : 22
+Failed tests     : 12
 Misformed tests  : 0
 -----------------------
 Total            : 34

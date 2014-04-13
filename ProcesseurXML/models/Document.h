@@ -12,16 +12,17 @@ class Document
 {
 	public:
 		Document();
-		Document(list<PI *> *, char*, list<Element *> *);
+		Document(list<PI *> *, char*, list<PI *> *,list<Element *> *);
 		~Document();
 		string Display();
 		list<Element *>* getElems();
-		list<PI*>* getProlog();
+		list<PI*>* getProlog_before();
 		string getDoctype();
 		
 	private:
   	list<Element *> *elems;
-		list<PI *> *prolog;
+		list<PI *> *prolog_before;
+		list<PI *> *prolog_after;
 		string doctype;
 };
 

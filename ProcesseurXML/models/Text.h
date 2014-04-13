@@ -6,12 +6,13 @@ class Text: public Element
 {
 	public:
     Text();
-    Text(char*);
+    Text(char*, int);
     ~Text();
     Text(Text& text);
     string Display(int indent);
 
 	protected:
+		int type; // 1 pour du texte simple, 2 pour du CDATA
 		string contenu;
 };
 
