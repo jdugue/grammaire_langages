@@ -47,7 +47,7 @@ string PI::Display(int indent)
 		buffer.append(" ");
 		buffer.append((*it)->toString());
 	}
-	buffer.append("?>\n");
+	buffer.append("?>");
 	
 	return buffer;
 }

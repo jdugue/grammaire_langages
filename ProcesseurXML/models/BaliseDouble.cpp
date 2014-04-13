@@ -56,6 +56,7 @@ string BaliseDouble::Display (int indent)
 	for (list<Element *>::iterator it = this->elements->begin(); it != this->elements->end(); it++)
 	{
 		mybalise.append((*it)->Display(indent+1));
+		mybalise.append("\n");
 	}
 	
 	addTabs(mybalise,indent);
@@ -68,7 +69,7 @@ string BaliseDouble::Display (int indent)
 	}
 	
 	mybalise.append(nom);
-	mybalise.append(">\n");
+	mybalise.append(">");
 	
 	return mybalise;
 }

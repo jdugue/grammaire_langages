@@ -28,6 +28,6 @@ string Commentaire::Display (int indent)
 	
 	comment.append("<!--");
 	comment.append(contenu);
-	comment.append("-->\n");
+	comment.append("-->");
 	return string();
 }

@@ -21,7 +21,7 @@ int xmllex(void);
 
 void xmlerror(Document ** doc, const char * msg)
 {
-   fprintf(stderr,"XML.Y : %s\n",msg);
+   fprintf(stderr,"%s\n",msg);
 }
 
 %}
@@ -50,22 +50,38 @@ void xmlerror(Document ** doc, const char * msg)
 %type <s> doctype valeurs 
 
 %parse-param {Document ** doc}
-
+//%error-verbose
 
 %%
 
 document
- : entete doctype elements { *doc=new Document($1,$2,$3);}
- ;
+ : entete doctype elements {*doc=new Document($1,$2,$3);}
+ 
 elements
  : elements element {$$=$1;$$->push_back($2);}
  |/*vide*/ {$$ = new list<Element*>();}
  ;
 element
  : INF NOM atts SUP content 
-   INF SLASH NOM SUP  { $$=new BaliseDouble($2,$5,$3);}
+   INF SLASH NOM SUP  { 
+		 if (strcmp($2,$8)!=0) 
+		 {
+		 	fprintf(stderr,"Non matching element names %s and %s\n",$2,$8);
+		 } 
+		 $$=new BaliseDouble($2,$5,$3);
+   }
  |INF NOM COLON NOM atts SUP content 
-   INF SLASH NOM SUP { $$=new BaliseDouble($4,$7,$5,$2);}
+   INF SLASH NOM COLON NOM SUP { 
+   	if (strcmp($2,$10)!=0)
+   	{
+   		fprintf(stderr,"Non matching element namespaces %s and %s\n",$2,$10);
+   	}
+   	if (strcmp($4,$12)!=0) 
+   	{
+   		fprintf(stderr,"Non matching element names %s and %s\n",$4,$12);
+   	}
+   	$$=new BaliseDouble($4,$7,$5,$2);
+   }
  | INF NOM atts SLASH SUP { $$=new BaliseVide($2,$3);}
  | INF NOM COLON NOM atts SLASH SUP  { $$=new BaliseVide($4,$5,$2);}       
  ;
@@ -82,12 +98,14 @@ entete
  ;
 
 doctype
-:DOCTYPE NOM NOM valeurs SUP{ char str[1000];
+:DOCTYPE NOM NOM valeurs SUP{char str[1000];
 					strcpy(str,$3);
 					strcat(str,$4);
 					strcat(str,">");
 					$$=str;}
-|/* vide */
+|/* vide */ {char str[10];
+					strcpy(str,"");
+					$$ = str;}
 ;     
 valeurs 
  : valeurs VALEUR {$$=$1; strcat($$,$2) ;}

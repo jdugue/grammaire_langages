@@ -23,8 +23,9 @@ Attribut::~Attribut()
 string Attribut::toString()
 {
 	string buffer(nom);
-	buffer.append("=");
+	buffer.append("=\"");
 	buffer.append(valeur);
+	buffer.append("\"");
 	return buffer;
 }
 

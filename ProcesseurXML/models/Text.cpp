@@ -24,7 +24,6 @@ string Text::Display(int indent)
 	addTabs(disp,indent);
 	
 	disp.append(contenu);
-	disp.append("\n");
 	
 	return disp;
 }

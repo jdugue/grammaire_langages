@@ -46,8 +46,7 @@ int main(int argc, char **argv)
 			FILE *fid = fopen(argv[2], "r");
 			if (fid == NULL)
 			{
-				fprintf(stderr,"Unable to open ");
-				fprintf(stderr,argv[2]);
+				fprintf(stderr,"Unable to open %s",argv[2]);
 				return 1;
 			}
 			xmlin = fid;
@@ -58,6 +57,15 @@ int main(int argc, char **argv)
 				{
 					cout << doc->Display() << endl;
 				}
+				else
+				{
+					fprintf(stderr,"No root markup");;
+					return 1;
+				}
+			}
+			else
+			{
+				cout << "COUCOU" << endl;
 			}
 			fclose(fid);
 		}

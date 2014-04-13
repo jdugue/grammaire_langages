@@ -41,7 +41,7 @@ string BaliseVide::Display (int indent)
 		mybalise.append((*it)->toString());
 	}
 	
-	mybalise.append("/>\n");
+	mybalise.append("/>");
 	
 	return mybalise;
 }

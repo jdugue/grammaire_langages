@@ -30,13 +30,17 @@ string Document::Display()
 	for (list<PI *>::iterator it = this->prolog->begin(); it != this->prolog->end(); it++)
 	{
 		buffer.append((*it)->Display(0));
+		buffer.append("\n");
 	}
-	//buffer.append(doctype);
+	buffer.append(doctype);
+	buffer.append("\n");
 	for (list<Element *>::iterator it = this->elems->begin(); it != this->elems->end(); it++)
 	{
 		buffer.append((*it)->Display(0));
+		buffer.append("\n");
 	}
-	return buffer;
+	// Suppression dernier saut de ligne
+	return buffer.erase(buffer.size()-1);
 }
 
 list<Element *>* Document:: getElems(){

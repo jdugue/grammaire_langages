@@ -1,4 +1,4 @@
-#include "Validation.h" 
+/*#include "Validation.h" 
 using namespace std;
 
 //map<nom, type> mapElm;
@@ -55,4 +55,4 @@ int validationDocument(Document xml, Document xsd){
   
 
   return 0;
-}
+}*/
