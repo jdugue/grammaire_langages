@@ -17,6 +17,7 @@ class Balise: public Element
 		string getNom();
 		list<Attribut*>* getAttributs();
 		string getNomDomaine();
+		string getValueFromAttribut(string attName);
 	
 	protected:
 		string nom;

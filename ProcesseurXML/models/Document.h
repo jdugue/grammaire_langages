@@ -18,9 +18,10 @@ class Document
 		list<Element *>* getElems();
 		list<PI*>* getProlog_before();
 		string getDoctype();
+		Element* getElementByName(string name);
 		
 	private:
-  	list<Element *> *elems;
+  		list<Element *> *elems;
 		list<PI *> *prolog_before;
 		list<PI *> *prolog_after;
 		string doctype;

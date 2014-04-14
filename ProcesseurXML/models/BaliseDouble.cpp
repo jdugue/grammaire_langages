@@ -77,3 +77,4 @@ string BaliseDouble::Display (int indent)
 list<Element*>* BaliseDouble::getElements(){
   return elements;
 }
+

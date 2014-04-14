@@ -3,6 +3,7 @@
 #include <fstream>
 #include <typeinfo>
 #include <string>
+#include "Balise.h"
 using namespace std;
 
 Document::Document()
@@ -62,3 +63,20 @@ list<PI *>* Document::getProlog_before(){
 string Document::getDoctype(){
 	return doctype;
 }
+
+Element* Document::getElementByName(string name)
+{
+	for (list<Element *>::iterator it = this->elems->begin(); it != this->elems->end(); it++)
+	{
+		if ( dynamic_cast<Balise*>(*it) )
+		{				
+			if ( ((Balise*)*it)->getNom().compare(name) == 0 )
+			{
+				return *it;
+			}
+		}
+	}
+	return 0;
+}
+
+
