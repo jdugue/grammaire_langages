@@ -39,7 +39,7 @@ string Text::Display(int indent)
 
 Text::~Text()
 {
-	// TODO
+	
 }
 
 int Text::getType(){

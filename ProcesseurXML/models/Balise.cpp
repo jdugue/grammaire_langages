@@ -29,7 +29,10 @@ Balise::Balise(const Balise &balise): Element((Element)balise)
 
 Balise::~Balise()
 {
-	// TODO
+	for (list<Attribut *>::iterator it = this->attributs->begin(); it != this->attributs->end(); it++)
+  	{
+  	  delete **it;
+  	}
 }
 
 string Balise:: getNom(){

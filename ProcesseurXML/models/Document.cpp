@@ -23,7 +23,21 @@ Document::Document(list<PI *>* prolog_b, char* doctype, list<PI *>* prolog_a, li
 
 Document::~Document()
 {
-	// TODO
+	
+	for (list<PI *>::iterator it = this->prolog_before->begin(); it != this->prolog_before->end(); it++)
+  	{
+  		delete **it;
+  	}
+
+	for (list<PI *>::iterator it = this->prolog_after->begin(); it != this->prolog_after->end(); it++)
+  	{
+  		delete **it;
+  	}
+
+	for (list<Element *>::iterator it = this->elems->begin(); it != this->elems->end(); it++)
+  	{
+  		delete **it;
+  	}
 }
 
 string Document::Display()
