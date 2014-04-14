@@ -12,7 +12,7 @@ class PI: public Element
     string Display (int indent);
 	string getNom();
 	string getNomDomaine();
-	list<Attributs*>* getAtts();
+	list<Attribut*>* getAtts();
 
 	protected:
 		string nom;
