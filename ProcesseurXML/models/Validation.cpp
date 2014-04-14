@@ -3,15 +3,15 @@
 #include <utility>
 using namespace std;
 
-//map<nom, type> mapElm;
-//map<nom, regex> mapType;
-      
 Validation :: Validation()
 { 
   // types par défaut
-  mapType.insert ( make_pair("xsd:string","([^A-Za-z0-9_-])"));
-  mapType.insert ( make_pair("xsd:date", "!^(0?\\d|[12]\\d|3[01])-(0?\\d|1[012])-((?:19|20)\\d{2})$!") );
-  
+ 	regex str_reg;
+ 	regcomp(&str_reg, "([^A-Za-z0-9_-])",0);
+ 	mapType.insert (make_pair("string",str_reg));
+ 	regex date_reg;
+ 	regcomp(&date_reg, "!^(0?\\d|[12]\\d|3[01])-(0?\\d|1[012])-((?:19|20)\\d{2})$!", 0);
+	mapType.insert (make_pair("date", date_reg));
 }
 
 int Validation::constructionSchema(Document xsd){

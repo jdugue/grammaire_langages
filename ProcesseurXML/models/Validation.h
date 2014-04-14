@@ -8,23 +8,24 @@
 #include"BaliseDouble.h"
 #include"Attribut.h"
 #include"Document.h"
+#include <regex.h>
 
 #include<map>
 
 typedef string nom;
 typedef string type;
-typedef string regex;
+typedef regex_t regex;
 
 class Validation
 {
   public:
-      Validation();
+  	Validation();
       
   private:
-      map<nom, type> mapElm;
-      map<nom, regex> mapType;
-      int validationDocument(Document xml, Document xsd);
-      int constructionSchema(Document xsd);
+  	map<nom, type> mapElm;
+  	map<nom, regex> mapType;
+  	int validationDocument(Document xml, Document xsd);
+  	int constructionSchema(Document xsd);
 	  int constructionExpression(Element* elm);
       
 };
