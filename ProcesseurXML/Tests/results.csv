@@ -17,13 +17,13 @@ TestParsingSimple1;Ok;Ok;Non testé;Non testé;Ok
 TestParsingSimple2;Ok;Ok;Non testé;Non testé;Ok
 TestParsingSimple3;Ok;Ok;Non testé;Non testé;Ok
 TestParsingSimple4;Ok;Ok;Non testé;Non testé;Ok
-TestParsingSimple5;Ok;Echec;Non testé;Non testé;Echec
+TestParsingSimple5;Ok;Ok;Non testé;Non testé;Ok
 TestParsingSyntaxError;Ok;Ok;Ok;Non testé;Ok
-TestTransformApplyTemplates1;Ok;Non testé;Non testé;Non testé;Ok
-TestTransformApplyTemplates2;Ok;Non testé;Non testé;Non testé;Ok
+TestTransformApplyTemplates1;Ok;Echec;Non testé;Non testé;Echec
+TestTransformApplyTemplates2;Ok;Echec;Non testé;Non testé;Echec
 TestTransformCannotOpen1;Echec;Ok;Echec;Non testé;Echec
 TestTransformCannotOpen2;Echec;Ok;Echec;Non testé;Echec
-TestTransformForeach;Ok;Non testé;Non testé;Non testé;Ok
+TestTransformForeach;Ok;Echec;Non testé;Non testé;Echec
 TestValidationCannotOpen1;Echec;Ok;Echec;Non testé;Echec
 TestValidationCannotOpen2;Echec;Ok;Echec;Non testé;Echec
 TestValidationChoiceBad;Ok;Echec;Non testé;Non testé;Echec
