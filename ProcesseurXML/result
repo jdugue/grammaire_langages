@@ -268,9 +268,9 @@ comportant un commentaire et une section CDATA.
 -----------------------------------------------------------
 ../xmltool -p ../files/with_header_comment_and_CDATA.xml
                                        Return Code : PASSED
-                                       Stdout      : FAILED
+                                       Stdout      : PASSED
                                        --------------------
-                                       Global      : FAILED
+                                       Global      : PASSED
 -----------------------------------------------------------
 
 -----------------------------------------------------------
@@ -297,8 +297,9 @@ a des apply-templates.
 -----------------------------------------------------------
 ../xmltool -t ../files/catalog.xml ../files/catalog_apply_templates.xsl
                                        Return Code : PASSED
+                                       Stdout      : FAILED
                                        --------------------
-                                       Global      : PASSED
+                                       Global      : FAILED
 -----------------------------------------------------------
 
 -----------------------------------------------------------
@@ -310,8 +311,9 @@ a des apply-templates.
 -----------------------------------------------------------
 ../xmltool -t ../files/catalog.xml ../files/catalog_apply_templates2.xsl
                                        Return Code : PASSED
+                                       Stdout      : FAILED
                                        --------------------
-                                       Global      : PASSED
+                                       Global      : FAILED
 -----------------------------------------------------------
 
 -----------------------------------------------------------
@@ -352,8 +354,9 @@ a un foreach.
 -----------------------------------------------------------
 ../xmltool -t ../files/catalog.xml ../files/catalog_foreach.xsl
                                        Return Code : PASSED
+                                       Stdout      : FAILED
                                        --------------------
-                                       Global      : PASSED
+                                       Global      : FAILED
 -----------------------------------------------------------
 
 -----------------------------------------------------------
@@ -484,8 +487,8 @@ de la séquence est manquant.
                                        Global      : FAILED
 -----------------------------------------------------------
 
-Passed tests     : 22
-Failed tests     : 12
+Passed tests     : 0
+Failed tests     : 0
 Misformed tests  : 0
 -----------------------
-Total            : 34
+Total            : 0
