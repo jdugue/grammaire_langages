@@ -1,4 +1,4 @@
-/*#include<string.h>
+#include<string.h>
 #include"Element.h"
 #include"Commentaire.h"
 #include"Text.h"
@@ -27,4 +27,4 @@ class Validation
       void constructionSchema(Document xsd);
 	  int constructionExpression(Element* elm);
       
-};*/
+};
