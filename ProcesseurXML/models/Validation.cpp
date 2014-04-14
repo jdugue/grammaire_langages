@@ -9,8 +9,7 @@ Validation :: Validation()
 { 
   // types par défaut
   mapType.insert ( std::pair<string, string>("string","([^A-Za-z0-9_-])"));
-  mapType.insert ( std::pair<string, string>("date","!(0?\\d|[12]\\d|3[01])-(0?\\d|1[012])-((?:19|20)\\d{2})$!") );
-  
+  mapType.insert ( std::pair<string, string>("date","([[:digit:]]{4})-([[:digit:]]{2})-([[:digit:]]{2})") );
 }
 
 void constructionSchema(Document xsd){
