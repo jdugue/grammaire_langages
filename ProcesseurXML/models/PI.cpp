@@ -24,7 +24,10 @@ PI::PI(PI &pi): Element((Element)pi)
 
 PI::~PI()
 {
-	// TODO
+	for (list<Attribut *>::iterator it = this->atts->begin(); it != this->atts->end(); it++)
+  	{
+  	  delete *it;
+  	}
 }
 
 string PI::Display(int indent)

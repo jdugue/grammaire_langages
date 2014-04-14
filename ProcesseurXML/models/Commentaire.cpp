@@ -17,7 +17,7 @@ Commentaire::Commentaire(Commentaire &commentaire): Element((Element)commentaire
 
 Commentaire::~Commentaire()
 {
-	// TODO
+	
 }
 
 string Commentaire::getContenu()

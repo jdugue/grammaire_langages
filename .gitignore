@@ -20,8 +20,6 @@
 *.app
 xmltool
 
-xmltool
-
 #tmp files
 *~
 

@@ -22,11 +22,10 @@ BaliseDouble::BaliseDouble(BaliseDouble &elemBalise): Balise(elemBalise)
 
 BaliseDouble::~BaliseDouble()
 {
-  //todo
-  //for (list<Attribut *>::iterator it = this->attributs->begin(); it != this->attributs->end(); it++)
-  //	{
-  //	  delete &it;
-  //	}
+  for (list<Element *>::iterator it = this->elements->begin(); it != this->elements->end(); it++)
+  	{
+  	  delete *it;
+  	}
 	
 }
 
