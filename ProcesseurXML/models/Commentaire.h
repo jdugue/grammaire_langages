@@ -9,6 +9,7 @@ class Commentaire: public Element
     Commentaire(char*&);
     ~Commentaire();
     Commentaire(Commentaire& commentaire);
+    string getContenu();
     string Display (int indent);
 
 	protected:
