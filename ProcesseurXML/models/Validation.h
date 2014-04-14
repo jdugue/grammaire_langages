@@ -1,4 +1,4 @@
-/*#include<string.h>
+#include<string.h>
 #include"Element.h"
 #include"Commentaire.h"
 #include"Text.h"
@@ -24,7 +24,7 @@ class Validation
       map<nom, type> mapElm;
       map<nom, regex> mapType;
       int validationDocument(Document xml, Document xsd);
-      void constructionSchema(Document xsd);
+      int constructionSchema(Document xsd);
 	  int constructionExpression(Element* elm);
       
-};*/
+};

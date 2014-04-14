@@ -58,6 +58,6 @@ string PI::getNom(){
 string PI::getNomDomaine(){
 	return nomDomaine;
 }
-list<Attributs*>* PI::getAtts(){
+list<Attribut*>* PI::getAtts(){
 	return atts;
 }
