@@ -32,7 +32,7 @@ int Validation::constructionExpression(Element* elm){
 			list<Attribut*>* l = myBalise->getAttributs();
 			list<Attribut*>::iterator it = l->begin();
 			for (; it != l->end(); it++){
-				if (it->getNom == "type"){
+				if ((*it)->getNom() == "type"){
 					
 				}
 			}
