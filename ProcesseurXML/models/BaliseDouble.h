@@ -12,7 +12,7 @@ class BaliseDouble: public Balise
 		BaliseDouble(char*&, list<Element *> *&, list<Attribut *> *&);
  		BaliseDouble(char*&, list<Element *> *&, list<Attribut *> *&, char*& pNomDomaine);
 		~BaliseDouble();
-		BaliseDouble (BaliseDouble& elemBalise);   
+		BaliseDouble (const BaliseDouble& elemBalise);   
 		string Display(int indent);
 	       	list<Element*>* getElements();
 

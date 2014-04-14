@@ -15,9 +15,9 @@ BaliseDouble::BaliseDouble(char*& nom, list<Element *> *&elements, list<Attribut
 	this->elements = elements;
 }
 
-BaliseDouble::BaliseDouble(BaliseDouble &elemBalise): Balise(elemBalise)
+BaliseDouble::BaliseDouble(const BaliseDouble &elemBalise)
 {
-	//TODO
+	
 }
 
 BaliseDouble::~BaliseDouble()

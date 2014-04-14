@@ -22,9 +22,17 @@ Balise::Balise(char*& pNom, std::list<Attribut*> *&attributs):Element()
 	this->attributs = attributs;
 }
 
-Balise::Balise(const Balise &balise): Element((Element)balise)
+Balise::Balise(const Balise &balise)
 {
-	//TODO
+	this->nom = balise.nom;
+	this->nomDomaine = balise.nomDomaine;
+	this->attributs = new list<Attribut*>();
+
+	for (list<Attribut *>::iterator it = balise.attributs->begin(); it != balise.attributs->end(); it++)
+  	{
+		Attribut * tmp = new Attribut(**it);
+  	 	this->attributs->push_back(tmp);
+  	}
 }
 
 Balise::~Balise()

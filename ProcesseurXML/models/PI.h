@@ -8,16 +8,16 @@ class PI: public Element
     PI();
     PI(char*, list<Attribut*>*, char* = (char*)"");
     ~PI();
-    PI(PI& pi);
+    PI(const PI& pi);
     string Display (int indent);
 	string getNom();
 	string getNomDomaine();
 	list<Attribut*>* getAtts();
 
 	protected:
-		string nom;
+	string nom;
     	string nomDomaine;
-		list<Attribut*>* atts;
+	list<Attribut*>* atts;
 };
 
 #endif

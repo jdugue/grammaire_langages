@@ -13,9 +13,9 @@ Text::Text(char* contenu,int type):Element()
 
 Text::Text(const Text &text)
 {
-    //TODO
-    //this->attributs = Text.lesAttributs;
-    //this->nom = Text.nom;
+    
+    this->type = text.type;
+    this->contenu = text.contenu;
 }
 
 string Text::Display(int indent)

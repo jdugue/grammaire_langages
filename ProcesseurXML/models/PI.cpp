@@ -14,12 +14,17 @@ PI::PI(char* nom, list<Attribut*>* atts, char* nomDomaine ):Element()
     this->nomDomaine = string(nomDomaine);
 }
 
-PI::PI(PI &pi): Element((Element)pi)
+PI::PI(const PI &pi)
 {
-
-    this->atts = pi.atts;
     this->nom = pi.nom;
     this->nomDomaine = pi.nomDomaine;
+    this->atts = new list<Attribut*>();
+
+    for (list<Attribut *>::iterator it = pi.atts->begin(); it != pi.atts->end(); it++)
+    {
+	Attribut * tmp = new Attribut(**it);
+  	 this->atts->push_back(tmp);
+    }
 }
 
 PI::~PI()
