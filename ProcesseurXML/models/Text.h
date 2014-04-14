@@ -10,6 +10,8 @@ class Text: public Element
     ~Text();
     Text(Text& text);
     string Display(int indent);
+    int getType();
+    string getContenu();
 
 	protected:
 		int type; // 1 pour du texte simple, 2 pour du CDATA

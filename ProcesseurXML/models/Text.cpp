@@ -41,3 +41,11 @@ Text::~Text()
 {
 	// TODO
 }
+
+int Text::getType(){
+	return type;
+}
+
+string Text::getContenu(){
+	return contenu;
+}
