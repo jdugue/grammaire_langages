@@ -1,4 +1,5 @@
-/*#include "Validation.h" 
+#include "Validation.h" 
+#include <typeinfo>
 using namespace std;
 
 //map<nom, type> mapElm;
@@ -8,19 +9,20 @@ Validation :: Validation()
 { 
   // types par défaut
   mapType.insert ( std::pair<string, string>("string","([^A-Za-z0-9_-])"));
-  mapType.insert ( std::pair<string, string>("date", "!^(0?\\d|[12]\\d|3[01])-(0?\\d|1[012])-((?:1
-9|20)\\d{2})$!") );
+  mapType.insert ( std::pair<string, string>("date","!(0?\\d|[12]\\d|3[01])-(0?\\d|1[012])-((?:19|20)\\d{2})$!") );
   
 }
 
 void constructionSchema(Document xsd){
 	list<Element *>* liste = xsd.getElems();
 	list<Element *>::iterator it = liste->begin();
-	// chercher la première balise element
-	//for (it != liste->end(); it++){
+	// Pour tout les balise element
+	for (;it != liste->end(); it++){
 	//	if (l'element est une balise element
 	//constructionExpression(it);
-	//}
+		if (typeid(*it) == typeid(BaliseDouble)){
+		}
+	}
 }
 
 int constructionExpression(Element* elm){
@@ -55,4 +57,4 @@ int validationDocument(Document xml, Document xsd){
   
 
   return 0;
-}*/
+}
