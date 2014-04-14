@@ -51,3 +51,13 @@ string PI::Display(int indent)
 	
 	return buffer;
 }
+
+string PI::getNom(){
+	return nom;
+}
+string PI::getNomDomaine(){
+	return nomDomaine;
+}
+list<Attributs*>* PI::getAtts(){
+	return atts;
+}

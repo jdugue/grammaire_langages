@@ -10,10 +10,13 @@ class PI: public Element
     ~PI();
     PI(PI& pi);
     string Display (int indent);
+	string getNom();
+	string getNomDomaine();
+	list<Attributs*>* getAtts();
 
 	protected:
 		string nom;
-    string nomDomaine;
+    	string nomDomaine;
 		list<Attribut*>* atts;
 };
 
