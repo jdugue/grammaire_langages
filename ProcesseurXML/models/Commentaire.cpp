@@ -20,6 +20,11 @@ Commentaire::~Commentaire()
 	// TODO
 }
 
+string Commentaire::getContenu()
+{
+	return contenu;
+}
+
 string Commentaire::Display (int indent)
 {
 	return contenu;
