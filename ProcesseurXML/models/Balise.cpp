@@ -31,7 +31,7 @@ Balise::~Balise()
 {
 	for (list<Attribut *>::iterator it = this->attributs->begin(); it != this->attributs->end(); it++)
   	{
-  	  delete **it;
+  	  delete *it;
   	}
 }
 

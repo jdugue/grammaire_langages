@@ -26,7 +26,7 @@ PI::~PI()
 {
 	for (list<Attribut *>::iterator it = this->atts->begin(); it != this->atts->end(); it++)
   	{
-  	  delete **it;
+  	  delete *it;
   	}
 }
 

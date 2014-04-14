@@ -11,7 +11,7 @@ Text::Text(char* contenu,int type):Element()
 	this->type = type;
 }
 
-Text::Text(Text &text): Element((Element)text)
+Text::Text(const Text &text)
 {
     //TODO
     //this->attributs = Text.lesAttributs;

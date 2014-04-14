@@ -26,17 +26,17 @@ Document::~Document()
 	
 	for (list<PI *>::iterator it = this->prolog_before->begin(); it != this->prolog_before->end(); it++)
   	{
-  		delete **it;
+  		delete *it;
   	}
 
 	for (list<PI *>::iterator it = this->prolog_after->begin(); it != this->prolog_after->end(); it++)
   	{
-  		delete **it;
+  		delete *it;
   	}
 
 	for (list<Element *>::iterator it = this->elems->begin(); it != this->elems->end(); it++)
   	{
-  		delete **it;
+  		delete *it;
   	}
 }
 

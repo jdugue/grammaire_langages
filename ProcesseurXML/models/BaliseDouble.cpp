@@ -24,7 +24,7 @@ BaliseDouble::~BaliseDouble()
 {
   for (list<Element *>::iterator it = this->elements->begin(); it != this->elements->end(); it++)
   	{
-  	  delete **it;
+  	  delete *it;
   	}
 	
 }

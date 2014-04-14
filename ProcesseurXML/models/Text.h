@@ -8,7 +8,7 @@ class Text: public Element
     Text();
     Text(char*, int);
     ~Text();
-    Text(Text& text);
+    Text(const Text& text);
     string Display(int indent);
     int getType();
     string getContenu();
