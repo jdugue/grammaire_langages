@@ -17,6 +17,7 @@ class Element
     {
     	return string();
     }
+    virtual string DisplayMyChildrenButNotMyGrandchildren(bool recursiver=false) { return ""; }
     virtual ~Element(){}
 };
 

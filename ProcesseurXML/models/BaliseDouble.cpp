@@ -74,6 +74,47 @@ string BaliseDouble::Display (int indent)
 	return mybalise;
 }
 
+
 list<Element*>* BaliseDouble::getElements(){
   return elements;
+}
+
+static string afficherBalise()
+{
+
+}
+string BaliseDouble::DisplayMyChildrenButNotMyGrandchildren(bool recursiver)
+{
+	string mybalise = string();
+	
+	
+	mybalise.append("<");
+	
+	if (!nomDomaine.empty())
+	{
+		mybalise.append(nomDomaine);
+		mybalise.append(":");
+	}
+	mybalise.append(nom);
+	
+	mybalise.append(">");
+	
+	for (list<Element *>::iterator it = this->elements->begin(); it != this->elements->end(); it++)
+	{
+		mybalise.append((*it)->DisplayMyChildrenButNotMyGrandchildren());
+	}
+	
+
+	mybalise.append("</");
+	
+	if (!nomDomaine.empty())
+	{
+		mybalise.append(nomDomaine);
+		mybalise.append(":");
+	}
+	
+	mybalise.append(nom);
+	mybalise.append(">");
+	
+	return mybalise;
 }

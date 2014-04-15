@@ -1,0 +1,42 @@
+map<string,string> map_regex;
+
+string Creation regex (Element root, map_reg):
+ Si c'est une balise double ou une balise simple:
+ 	string reg()
+ 	Si elle a un attribut name :
+ 		reg+= "<" + name +">"
+ 	Si son nom de balise c'est complexType :
+		Pour chacun des enfants de root :
+			reg+=creation regex(enfant, map_reg)
+	Sinon, si il a un attribut ref :
+		On récupère ref, minOccurs et maxOccurs
+		reg+=ref
+		Si (minOccurs et maxOccurs sont présents) :
+		reg+={min,max}
+		Si que min :
+		reg+={min,}
+		Si que max :
+		reg+={1,max}
+	Sinon, si nom de balise = sequence :
+		reg+="("
+		Pour chacun des enfants de root :
+			reg+=creation regex(enfant, map_reg)
+		reg+=")"
+	Sinon, si nom de balise = choice :
+		reg+="("
+		Pour chacun des enfants de root :
+			reg+=creation regex(enfant, map_reg)
+			reg+="|"
+		supprimer le dernier pipe
+		reg+=")"
+	Sinon,
+		Si type = date :
+			reg += ???
+		Sinon :
+			reg += "[^<&]*"
+			Pour chacun des enfants de root :
+				reg+=creation regex(enfant, map_reg)
+	Si elle a un attribut name :
+		reg+= "</" + name +">" 
+		mapreg[name]=reg
+	return reg

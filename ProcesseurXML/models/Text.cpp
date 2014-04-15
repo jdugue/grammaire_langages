@@ -49,3 +49,8 @@ int Text::getType(){
 string Text::getContenu(){
 	return contenu;
 }
+
+string Text::DisplayMyChildrenButNotMyGrandchildren(bool recursiver)
+{
+	return contenu;
+}

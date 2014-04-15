@@ -61,3 +61,21 @@ string PI::getNomDomaine(){
 list<Attribut*>* PI::getAtts(){
 	return atts;
 }
+
+string PI::DisplayMyChildrenButNotMyGrandchildren(bool recursiver)
+{
+	string buffer = string();
+	
+	buffer.append("<?");
+	
+	if (!nomDomaine.empty())
+	{
+		buffer.append(this->nomDomaine);
+		buffer.append(":"); 
+	}	
+	buffer.append(this->nom);
+
+	buffer.append("?>");
+	
+	return buffer;
+}

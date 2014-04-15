@@ -10,6 +10,7 @@ class PI: public Element
     ~PI();
     PI(PI& pi);
     string Display (int indent);
+    virtual string DisplayMyChildrenButNotMyGrandchildren(bool recursiver=false);
 	string getNom();
 	string getNomDomaine();
 	list<Attribut*>* getAtts();

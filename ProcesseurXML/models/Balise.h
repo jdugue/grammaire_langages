@@ -12,11 +12,16 @@ class Balise: public Element
 		Balise(const Balise& balise);
 		virtual string Display(int indent)
 		{
-	  	return string();
+	  		return string();
 		}	
 		string getNom();
 		list<Attribut*>* getAttributs();
+		Attribut* getAttribut(const string& name);
 		string getNomDomaine();
+		virtual list<Element*>* getElements()
+		{
+			return NULL;
+		}
 	
 	protected:
 		string nom;
