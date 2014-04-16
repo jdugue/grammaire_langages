@@ -1,0 +1,623 @@
+State 2 conflicts: 1 shift/reduce
+
+
+Grammar
+
+    0 $accept: document $end
+
+    1 document: entete doctype entete elements
+
+    2 elements: elements element
+    3         | /* empty */
+
+    4 element: INF NOM atts SUP content INF SLASH NOM SUP
+    5        | INF NOM COLON NOM atts SUP content INF SLASH NOM COLON NOM SUP
+    6        | INF NOM atts SLASH SUP
+    7        | INF NOM COLON NOM atts SLASH SUP
+
+    8 content: content element
+    9        | content cdata
+   10        | content DONNEES
+   11        | content COMMENT
+   12        | /* empty */
+
+   13 entete: entete pi
+   14       | /* empty */
+
+   15 doctype: DOCTYPE NOM NOM valeurs SUP
+   16        | /* empty */
+
+   17 valeurs: valeurs VALEUR
+   18        | /* empty */
+
+   19 pi: INFSPECIAL NOM atts SUPSPECIAL
+   20   | INFSPECIAL NOM COLON NOM atts SUPSPECIAL
+
+   21 atts: atts att
+   22     | /* empty */
+
+   23 att: NOM EGAL VALEUR
+   24    | NOM COLON NOM EGAL VALEUR
+
+   25 cdata: CDATABEGIN CDATAEND
+
+
+Terminals, with rules where they appear
+
+$end (0) 0
+error (256)
+EGAL (258) 23 24
+SLASH (259) 4 5 6 7
+SUP (260) 4 5 6 7 15
+SUPSPECIAL (261) 19 20
+DOCTYPE (262) 15
+COLON (263) 5 7 20 24
+INFSPECIAL (264) 19 20
+INF (265) 4 5 6 7
+CDATABEGIN (266) 25
+VALEUR (267) 17 23 24
+DONNEES (268) 10
+COMMENT (269) 11
+NOM (270) 4 5 6 7 15 19 20 23 24
+CDATAEND (271) 25
+
+
+Nonterminals, with rules where they appear
+
+$accept (17)
+    on left: 0
+document (18)
+    on left: 1, on right: 0
+elements (19)
+    on left: 2 3, on right: 1 2
+element (20)
+    on left: 4 5 6 7, on right: 2 8
+content (21)
+    on left: 8 9 10 11 12, on right: 4 5 8 9 10 11
+entete (22)
+    on left: 13 14, on right: 1 13
+doctype (23)
+    on left: 15 16, on right: 1
+valeurs (24)
+    on left: 17 18, on right: 15 17
+pi (25)
+    on left: 19 20, on right: 13
+atts (26)
+    on left: 21 22, on right: 4 5 6 7 19 20 21
+att (27)
+    on left: 23 24, on right: 21
+cdata (28)
+    on left: 25, on right: 9
+
+
+State 0
+
+    0 $accept: . document $end
+
+    $default  reduce using rule 14 (entete)
+
+    document  go to state 1
+    entete    go to state 2
+
+
+State 1
+
+    0 $accept: document . $end
+
+    $end  shift, and go to state 3
+
+
+State 2
+
+    1 document: entete . doctype entete elements
+   13 entete: entete . pi
+
+    DOCTYPE     shift, and go to state 4
+    INFSPECIAL  shift, and go to state 5
+
+    INFSPECIAL  [reduce using rule 16 (doctype)]
+    $default    reduce using rule 16 (doctype)
+
+    doctype  go to state 6
+    pi       go to state 7
+
+
+State 3
+
+    0 $accept: document $end .
+
+    $default  accept
+
+
+State 4
+
+   15 doctype: DOCTYPE . NOM NOM valeurs SUP
+
+    NOM  shift, and go to state 8
+
+
+State 5
+
+   19 pi: INFSPECIAL . NOM atts SUPSPECIAL
+   20   | INFSPECIAL . NOM COLON NOM atts SUPSPECIAL
+
+    NOM  shift, and go to state 9
+
+
+State 6
+
+    1 document: entete doctype . entete elements
+
+    $default  reduce using rule 14 (entete)
+
+    entete  go to state 10
+
+
+State 7
+
+   13 entete: entete pi .
+
+    $default  reduce using rule 13 (entete)
+
+
+State 8
+
+   15 doctype: DOCTYPE NOM . NOM valeurs SUP
+
+    NOM  shift, and go to state 11
+
+
+State 9
+
+   19 pi: INFSPECIAL NOM . atts SUPSPECIAL
+   20   | INFSPECIAL NOM . COLON NOM atts SUPSPECIAL
+
+    COLON  shift, and go to state 12
+
+    $default  reduce using rule 22 (atts)
+
+    atts  go to state 13
+
+
+State 10
+
+    1 document: entete doctype entete . elements
+   13 entete: entete . pi
+
+    INFSPECIAL  shift, and go to state 5
+
+    $default  reduce using rule 3 (elements)
+
+    elements  go to state 14
+    pi        go to state 7
+
+
+State 11
+
+   15 doctype: DOCTYPE NOM NOM . valeurs SUP
+
+    $default  reduce using rule 18 (valeurs)
+
+    valeurs  go to state 15
+
+
+State 12
+
+   20 pi: INFSPECIAL NOM COLON . NOM atts SUPSPECIAL
+
+    NOM  shift, and go to state 16
+
+
+State 13
+
+   19 pi: INFSPECIAL NOM atts . SUPSPECIAL
+   21 atts: atts . att
+
+    SUPSPECIAL  shift, and go to state 17
+    NOM         shift, and go to state 18
+
+    att  go to state 19
+
+
+State 14
+
+    1 document: entete doctype entete elements .
+    2 elements: elements . element
+
+    INF  shift, and go to state 20
+
+    $default  reduce using rule 1 (document)
+
+    element  go to state 21
+
+
+State 15
+
+   15 doctype: DOCTYPE NOM NOM valeurs . SUP
+   17 valeurs: valeurs . VALEUR
+
+    SUP     shift, and go to state 22
+    VALEUR  shift, and go to state 23
+
+
+State 16
+
+   20 pi: INFSPECIAL NOM COLON NOM . atts SUPSPECIAL
+
+    $default  reduce using rule 22 (atts)
+
+    atts  go to state 24
+
+
+State 17
+
+   19 pi: INFSPECIAL NOM atts SUPSPECIAL .
+
+    $default  reduce using rule 19 (pi)
+
+
+State 18
+
+   23 att: NOM . EGAL VALEUR
+   24    | NOM . COLON NOM EGAL VALEUR
+
+    EGAL   shift, and go to state 25
+    COLON  shift, and go to state 26
+
+
+State 19
+
+   21 atts: atts att .
+
+    $default  reduce using rule 21 (atts)
+
+
+State 20
+
+    4 element: INF . NOM atts SUP content INF SLASH NOM SUP
+    5        | INF . NOM COLON NOM atts SUP content INF SLASH NOM COLON NOM SUP
+    6        | INF . NOM atts SLASH SUP
+    7        | INF . NOM COLON NOM atts SLASH SUP
+
+    NOM  shift, and go to state 27
+
+
+State 21
+
+    2 elements: elements element .
+
+    $default  reduce using rule 2 (elements)
+
+
+State 22
+
+   15 doctype: DOCTYPE NOM NOM valeurs SUP .
+
+    $default  reduce using rule 15 (doctype)
+
+
+State 23
+
+   17 valeurs: valeurs VALEUR .
+
+    $default  reduce using rule 17 (valeurs)
+
+
+State 24
+
+   20 pi: INFSPECIAL NOM COLON NOM atts . SUPSPECIAL
+   21 atts: atts . att
+
+    SUPSPECIAL  shift, and go to state 28
+    NOM         shift, and go to state 18
+
+    att  go to state 19
+
+
+State 25
+
+   23 att: NOM EGAL . VALEUR
+
+    VALEUR  shift, and go to state 29
+
+
+State 26
+
+   24 att: NOM COLON . NOM EGAL VALEUR
+
+    NOM  shift, and go to state 30
+
+
+State 27
+
+    4 element: INF NOM . atts SUP content INF SLASH NOM SUP
+    5        | INF NOM . COLON NOM atts SUP content INF SLASH NOM COLON NOM SUP
+    6        | INF NOM . atts SLASH SUP
+    7        | INF NOM . COLON NOM atts SLASH SUP
+
+    COLON  shift, and go to state 31
+
+    $default  reduce using rule 22 (atts)
+
+    atts  go to state 32
+
+
+State 28
+
+   20 pi: INFSPECIAL NOM COLON NOM atts SUPSPECIAL .
+
+    $default  reduce using rule 20 (pi)
+
+
+State 29
+
+   23 att: NOM EGAL VALEUR .
+
+    $default  reduce using rule 23 (att)
+
+
+State 30
+
+   24 att: NOM COLON NOM . EGAL VALEUR
+
+    EGAL  shift, and go to state 33
+
+
+State 31
+
+    5 element: INF NOM COLON . NOM atts SUP content INF SLASH NOM COLON NOM SUP
+    7        | INF NOM COLON . NOM atts SLASH SUP
+
+    NOM  shift, and go to state 34
+
+
+State 32
+
+    4 element: INF NOM atts . SUP content INF SLASH NOM SUP
+    6        | INF NOM atts . SLASH SUP
+   21 atts: atts . att
+
+    SLASH  shift, and go to state 35
+    SUP    shift, and go to state 36
+    NOM    shift, and go to state 18
+
+    att  go to state 19
+
+
+State 33
+
+   24 att: NOM COLON NOM EGAL . VALEUR
+
+    VALEUR  shift, and go to state 37
+
+
+State 34
+
+    5 element: INF NOM COLON NOM . atts SUP content INF SLASH NOM COLON NOM SUP
+    7        | INF NOM COLON NOM . atts SLASH SUP
+
+    $default  reduce using rule 22 (atts)
+
+    atts  go to state 38
+
+
+State 35
+
+    6 element: INF NOM atts SLASH . SUP
+
+    SUP  shift, and go to state 39
+
+
+State 36
+
+    4 element: INF NOM atts SUP . content INF SLASH NOM SUP
+
+    $default  reduce using rule 12 (content)
+
+    content  go to state 40
+
+
+State 37
+
+   24 att: NOM COLON NOM EGAL VALEUR .
+
+    $default  reduce using rule 24 (att)
+
+
+State 38
+
+    5 element: INF NOM COLON NOM atts . SUP content INF SLASH NOM COLON NOM SUP
+    7        | INF NOM COLON NOM atts . SLASH SUP
+   21 atts: atts . att
+
+    SLASH  shift, and go to state 41
+    SUP    shift, and go to state 42
+    NOM    shift, and go to state 18
+
+    att  go to state 19
+
+
+State 39
+
+    6 element: INF NOM atts SLASH SUP .
+
+    $default  reduce using rule 6 (element)
+
+
+State 40
+
+    4 element: INF NOM atts SUP content . INF SLASH NOM SUP
+    8 content: content . element
+    9        | content . cdata
+   10        | content . DONNEES
+   11        | content . COMMENT
+
+    INF         shift, and go to state 43
+    CDATABEGIN  shift, and go to state 44
+    DONNEES     shift, and go to state 45
+    COMMENT     shift, and go to state 46
+
+    element  go to state 47
+    cdata    go to state 48
+
+
+State 41
+
+    7 element: INF NOM COLON NOM atts SLASH . SUP
+
+    SUP  shift, and go to state 49
+
+
+State 42
+
+    5 element: INF NOM COLON NOM atts SUP . content INF SLASH NOM COLON NOM SUP
+
+    $default  reduce using rule 12 (content)
+
+    content  go to state 50
+
+
+State 43
+
+    4 element: INF . NOM atts SUP content INF SLASH NOM SUP
+    4        | INF NOM atts SUP content INF . SLASH NOM SUP
+    5        | INF . NOM COLON NOM atts SUP content INF SLASH NOM COLON NOM SUP
+    6        | INF . NOM atts SLASH SUP
+    7        | INF . NOM COLON NOM atts SLASH SUP
+
+    SLASH  shift, and go to state 51
+    NOM    shift, and go to state 27
+
+
+State 44
+
+   25 cdata: CDATABEGIN . CDATAEND
+
+    CDATAEND  shift, and go to state 52
+
+
+State 45
+
+   10 content: content DONNEES .
+
+    $default  reduce using rule 10 (content)
+
+
+State 46
+
+   11 content: content COMMENT .
+
+    $default  reduce using rule 11 (content)
+
+
+State 47
+
+    8 content: content element .
+
+    $default  reduce using rule 8 (content)
+
+
+State 48
+
+    9 content: content cdata .
+
+    $default  reduce using rule 9 (content)
+
+
+State 49
+
+    7 element: INF NOM COLON NOM atts SLASH SUP .
+
+    $default  reduce using rule 7 (element)
+
+
+State 50
+
+    5 element: INF NOM COLON NOM atts SUP content . INF SLASH NOM COLON NOM SUP
+    8 content: content . element
+    9        | content . cdata
+   10        | content . DONNEES
+   11        | content . COMMENT
+
+    INF         shift, and go to state 53
+    CDATABEGIN  shift, and go to state 44
+    DONNEES     shift, and go to state 45
+    COMMENT     shift, and go to state 46
+
+    element  go to state 47
+    cdata    go to state 48
+
+
+State 51
+
+    4 element: INF NOM atts SUP content INF SLASH . NOM SUP
+
+    NOM  shift, and go to state 54
+
+
+State 52
+
+   25 cdata: CDATABEGIN CDATAEND .
+
+    $default  reduce using rule 25 (cdata)
+
+
+State 53
+
+    4 element: INF . NOM atts SUP content INF SLASH NOM SUP
+    5        | INF . NOM COLON NOM atts SUP content INF SLASH NOM COLON NOM SUP
+    5        | INF NOM COLON NOM atts SUP content INF . SLASH NOM COLON NOM SUP
+    6        | INF . NOM atts SLASH SUP
+    7        | INF . NOM COLON NOM atts SLASH SUP
+
+    SLASH  shift, and go to state 55
+    NOM    shift, and go to state 27
+
+
+State 54
+
+    4 element: INF NOM atts SUP content INF SLASH NOM . SUP
+
+    SUP  shift, and go to state 56
+
+
+State 55
+
+    5 element: INF NOM COLON NOM atts SUP content INF SLASH . NOM COLON NOM SUP
+
+    NOM  shift, and go to state 57
+
+
+State 56
+
+    4 element: INF NOM atts SUP content INF SLASH NOM SUP .
+
+    $default  reduce using rule 4 (element)
+
+
+State 57
+
+    5 element: INF NOM COLON NOM atts SUP content INF SLASH NOM . COLON NOM SUP
+
+    COLON  shift, and go to state 58
+
+
+State 58
+
+    5 element: INF NOM COLON NOM atts SUP content INF SLASH NOM COLON . NOM SUP
+
+    NOM  shift, and go to state 59
+
+
+State 59
+
+    5 element: INF NOM COLON NOM atts SUP content INF SLASH NOM COLON NOM . SUP
+
+    SUP  shift, and go to state 60
+
+
+State 60
+
+    5 element: INF NOM COLON NOM atts SUP content INF SLASH NOM COLON NOM SUP .
+
+    $default  reduce using rule 5 (element)
