@@ -17,6 +17,7 @@ class BaliseDouble: public Balise
 		string Display(int indent);
 	    list<Element*>* getElements();
 		list<Balise*> getElementByName(string name);
+		list<Element*>::iterator getItToElementByName(string name);
 
 	private:
 		list<Element *> *elements;

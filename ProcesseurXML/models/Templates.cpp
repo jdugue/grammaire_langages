@@ -25,10 +25,15 @@ void Templates::ApplyTemplate(Document * docxml, Document * newdoc)
 	if (templates.find("/") != templates.end())
 	{
 		list<Element *> * newdocElements = newdoc->getElems();
-		list<Element *> * xslElements = ((BaliseDouble*)templates.find("/")->second)->getElements();
+		list<Element *> * xslElements = ((BaliseDouble*)templates.find("cd")->second)->getElements();
 		newdocElements->merge(*xslElements);
 		
 		ApplyTemplateOnNode(newdoc->getElems());
+		cout << newdoc->Display() << endl;
+		
+	}
+	else
+	{
 		
 	}
 }
@@ -61,46 +66,38 @@ BaliseDouble* Templates::findMotherElement(string name, BaliseDouble* root )
 	return NULL;
 }
 
-void Templates::ApplyTemplateOnNode(list<Element*>* elems)
+void Templates::ApplyTemplateOnNode(list<Element*>* newdocElems)
 {
-	for (  list<Element*>::iterator it = elems->begin();
-								it != elems->end(); it++)
+	for (  list<Element*>::iterator it = newdocElems->begin();
+								it != newdocElems->end(); it++)
 	{
 		if ( dynamic_cast<BaliseDouble*>(*it))
 		{
-			BaliseDouble* mother = findMotherElement("apply-templates", (BaliseDouble*)*it);
-			if ( mother != NULL )
+			BaliseDouble* mother;
+			do
 			{
-				// cout << mother->Display(0) << endl;
-				list<Balise*> balises = mother->getElementByName("apply-templates");
-				
-				for ( list<Balise*>::iterator it = balises.begin();	it != balises.end(); it++)
+				BaliseDouble* mother = findMotherElement("apply-templates", (BaliseDouble*)*it);
+				if ( mother != NULL )
 				{
-					if ( (*it)->getAttributs()->size() == 0 )
-					//Cas apply-templates sans select
+				
+					list<Element*>::iterator it = mother->getItToElementByName("apply-templates");
+					if ( it != mother->getElements()->end() )
 					{
-						string nextTemplate = NextTemplate();
-						if ( string != NULL )
-						{
-							// A FAIRE
-							//TODO
-						}
-					}
-					//Cas apply-templates select="x"
-					else
-					{
-						
+						string nameToFind = ((Balise*)*it)->getValueFromAttribut("select");
+						it = mother->getElements()->erase(it);
+						mother->getElements()->splice(it, *(templates.find(nameToFind)->second->getElements()));
+						ApplyTemplateOnNode(mother->getElements());
+					
 					}
 				}
-			}
+			}while ( findMotherElement("apply-templates", (BaliseDouble*)*it));
 		}
 			
 	}
 }
 
-string Templates::NextTemplate()
+string Templates::NextTemplate(list<Element *>* elementsDuXml)
 {
-	list<Element *>* elementsDuXml = xml->getElems();
 	for (  list<Element*>::iterator it = elementsDuXml->begin();
 									it != elementsDuXml->end(); it++)
 	{
@@ -113,7 +110,7 @@ string Templates::NextTemplate()
 			}
 			else
 			{
-				return NULL;
+				return "";
 			}
 		}
 	}

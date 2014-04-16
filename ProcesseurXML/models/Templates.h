@@ -18,7 +18,7 @@ class Templates
 		void ApplyTemplate(Document * docxml, Document * newdoc);
 		BaliseDouble* findMotherElement(string name, BaliseDouble* root );
 		void ApplyTemplateOnNode(list<Element*>*);
-		std::string NextTemplate();
+		string NextTemplate(list<Element *>*);
 		
 	private:
   		map<string, BaliseDouble*> templates;
