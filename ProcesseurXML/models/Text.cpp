@@ -50,7 +50,7 @@ string Text::getContenu(){
 	return contenu;
 }
 
-string Text::DisplayMyChildrenButNotMyGrandchildren(bool recursiver)
+string Text::DisplayNoAtts()
 {
 	return contenu;
 }

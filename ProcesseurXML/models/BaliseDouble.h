@@ -14,7 +14,7 @@ class BaliseDouble: public Balise
 		~BaliseDouble();
 		BaliseDouble (BaliseDouble& elemBalise);   
 		string Display(int indent);
-		virtual string DisplayMyChildrenButNotMyGrandchildren(bool recursiver=false);
+		virtual string DisplayNoAtts();
 	    list<Element*>* getElements();
 
 	private:

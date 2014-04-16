@@ -10,7 +10,7 @@ class BaliseVide: public Balise
     ~BaliseVide();
     BaliseVide (BaliseVide& baliseVide);
     string Display(int indent);
-    virtual string DisplayMyChildrenButNotMyGrandchildren(bool recursiver=false);
+    virtual string DisplayNoAtts();
 };
 
 #endif

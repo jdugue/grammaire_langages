@@ -83,7 +83,7 @@ static string afficherBalise()
 {
 
 }
-string BaliseDouble::DisplayMyChildrenButNotMyGrandchildren(bool recursiver)
+string BaliseDouble::DisplayNoAtts()
 {
 	string mybalise = string();
 	
@@ -101,7 +101,7 @@ string BaliseDouble::DisplayMyChildrenButNotMyGrandchildren(bool recursiver)
 	
 	for (list<Element *>::iterator it = this->elements->begin(); it != this->elements->end(); it++)
 	{
-		mybalise.append((*it)->DisplayMyChildrenButNotMyGrandchildren());
+		mybalise.append((*it)->DisplayNoAtts());
 	}
 	
 

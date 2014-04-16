@@ -10,7 +10,7 @@ class Text: public Element
     ~Text();
     Text(Text& text);
     string Display(int indent);
-    virtual string DisplayMyChildrenButNotMyGrandchildren(bool recursiver=false);
+    virtual string DisplayNoAtts();
     int getType();
     string getContenu();
 

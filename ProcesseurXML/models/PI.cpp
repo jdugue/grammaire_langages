@@ -62,9 +62,9 @@ list<Attribut*>* PI::getAtts(){
 	return atts;
 }
 
-string PI::DisplayMyChildrenButNotMyGrandchildren(bool recursiver)
+string PI::DisplayNoAtts()
 {
-	string buffer = string();
+	/*string buffer = string();
 	
 	buffer.append("<?");
 	
@@ -77,5 +77,5 @@ string PI::DisplayMyChildrenButNotMyGrandchildren(bool recursiver)
 
 	buffer.append("?>");
 	
-	return buffer;
+	return buffer;*/
 }

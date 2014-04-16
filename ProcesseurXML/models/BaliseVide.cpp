@@ -46,16 +46,7 @@ string BaliseVide::Display (int indent)
 	return mybalise;
 }
 
-string BaliseVide::DisplayMyChildrenButNotMyGrandchildren(bool recursiver)
+string BaliseVide::DisplayNoAtts()
 {
-	/*string mybalise = string();
-	mybalise.append("<");
-	
-	if (!nomDomaine.empty())
-	{
-		mybalise.append(nomDomaine);
-		mybalise.append(":");
-	}
-	mybalise.append(nom);
-	mybalise.append(">\n");*/
+	/* Rien à faire */
 }

@@ -9,7 +9,7 @@
 using namespace std;
 
 int xmlparse(Document**);    
-    
+
 int main(int argc, char **argv) 
 {
 	extern FILE *xmlin;
@@ -70,9 +70,27 @@ int main(int argc, char **argv)
 	}
 	else if (strcmp(argv[1],"-t") == 0)
 	{
+		Document* xsl = NULL;
 		if (argc < 4)
 		{
 			fprintf(stderr,"You must provide two arguments to the command -t: an xml file and an xsl file\n");
+			return 1;
+		}
+		int retour;
+		FILE *fid = fopen(argv[2], "r");
+		if (fid == NULL)
+		{
+			fprintf(stderr,"Unable to open file %s",argv[2]);
+			return 1;
+		}
+		xmlin = fid;
+		retour = xmlparse(&doc);
+		fclose(fid);
+
+		fid = fopen(argv[3], "r");
+		if (fid == NULL)
+		{
+			fprintf(stderr,"Unable to open file %s",argv[3]);
 			return 1;
 		}
 	}
@@ -88,7 +106,7 @@ int main(int argc, char **argv)
 		FILE *fid = fopen(argv[2], "r");
 		if (fid == NULL)
 		{
-			fprintf(stderr,"Unable to open %s",argv[2]);
+			fprintf(stderr,"Unable to open file %s",argv[2]);
 			return 1;
 		}
 		xmlin = fid;
@@ -98,7 +116,7 @@ int main(int argc, char **argv)
 		fid = fopen(argv[3], "r");
 		if (fid == NULL)
 		{
-			fprintf(stderr,"Unable to open %s",argv[3]);
+			fprintf(stderr,"Unable to open file %s",argv[3]);
 			return 1;
 		}
 		xmlin = fid;
