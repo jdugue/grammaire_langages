@@ -5,6 +5,8 @@
 #include <list>
 #include <vector>
 #include "PI.h"
+#include "Balise.h"
+#include "BaliseDouble.h"
 
 using namespace std;
 
@@ -19,6 +21,7 @@ class Document
 		list<PI*>* getProlog_before();
 		string getDoctype();
 		Element* getElementByName(string name);
+		list<Balise *> getAllElementsByName(string name, list<Element *>* );
 		
 	private:
   		list<Element *> *elems;

@@ -4,6 +4,7 @@
 #include <typeinfo>
 #include <string>
 #include "Balise.h"
+#include "BaliseDouble.h"
 using namespace std;
 
 Document::Document()
@@ -80,4 +81,35 @@ Element* Document::getElementByName(string name)
 	return 0;
 }
 
+list<Balise *> Document::getAllElementsByName(string name, list<Element *>* listeOuChercher)
+{
+	list<Balise *> elementsOfName;
+	for (list<Element *>::iterator it = listeOuChercher->begin(); it != listeOuChercher->end(); it++)
+	{
+		if ( dynamic_cast<Balise*>(*it) )
+		{				
+			if ( ((Balise*)*it)->getNom().compare(name) == 0 )
+			{
+				
+				elementsOfName.push_back((Balise*)*it);
+			}
+		}
+	}
+	if ( elementsOfName.size() == 0)
+	{
+		for (list<Element *>::iterator it = listeOuChercher->begin(); it != listeOuChercher->end(); it++)
+		{
+			if ( dynamic_cast<BaliseDouble*>(*it) )
+			{				
+				if ( ((BaliseDouble*)*it)->getNom().compare(name) == 0 )
+				{
+				
+					return getAllElementsByName(name, ((BaliseDouble*)*it)->getElements());
+				}
+			}
+		}
+			
+	}
+	return elementsOfName;
+}
 

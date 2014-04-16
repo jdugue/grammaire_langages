@@ -25,9 +25,14 @@ void Templates::ApplyTemplate(Document * docxml, Document * newdoc)
 	if (templates.find("/") != templates.end())
 	{
 		list<Element *> * newdocElements = newdoc->getElems();
-		list<Element *> * xslElements = ((BaliseDouble*)templates.find("cd")->second)->getElements();
+		list<Element *> * xslElements = ((BaliseDouble*)templates.find("/")->second)->getElements();
 		newdocElements->merge(*xslElements);
 		
+		
+		//BaliseDouble* mother = findMotherElement("apply-templates", );
+		//list<Element*>::iterator it = mother->getItToElementByName("apply-templates");
+
+
 		ApplyTemplateOnNode(newdoc->getElems());
 		cout << newdoc->Display() << endl;
 		
@@ -116,4 +121,40 @@ string Templates::NextTemplate(list<Element *>* elementsDuXml)
 	}
 }
 
+
+
+void Templates::ApplyTemplateForXml(string baliseName)
+{
+	list<Element *> * xslElements = ((BaliseDouble*)templates.find(baliseName)->second)->getElements();
+	ApplyTemplateOnNode(xslElements);
+	list<Balise*> xmlElementsToTransform = xml->getAllElementsByName(baliseName, xml->getElems());
+	//newdocElements->merge(*xslElements);
+}
+
+
+BaliseDouble* Templates::findElementsXml(string name, BaliseDouble* root )
+{
+	BaliseDouble* mother = root;
+	//Si l'element est dans mother
+	if ( mother->getElementByName(name).size()!= 0 )
+	{
+		return mother;
+	}
+	//Sinon on regarde les filsssss
+	for ( list<Element*>::iterator it = mother->getElements()->begin();
+									it != mother->getElements()->end(); it++)
+	{
+		//Mais seulement s'ils sont des BaliseDouble, bien sur
+		if ( dynamic_cast<BaliseDouble*>(*it))
+		{
+			BaliseDouble* b = findMotherElement(name, (BaliseDouble*)*it);
+			if ( b != NULL )
+			{
+				return b;
+			}
+		}
+	}	
+	
+	return NULL;
+}
 

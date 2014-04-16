@@ -19,6 +19,8 @@ class Templates
 		BaliseDouble* findMotherElement(string name, BaliseDouble* root );
 		void ApplyTemplateOnNode(list<Element*>*);
 		string NextTemplate(list<Element *>*);
+		void ApplyTemplateForXml(string baliseName);
+		BaliseDouble* findElementsXml(string name, BaliseDouble* root );
 		
 	private:
   		map<string, BaliseDouble*> templates;
