@@ -25,7 +25,6 @@ int xmlTransformation(FILE *xml, FILE *xsl)
 
 
     Transformation* transformer = new Transformation(docXsl, docXml);
-    transformer->transform();
 
     return 1;
 } 

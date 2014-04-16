@@ -12,8 +12,6 @@ class Transformation
 	public:
 		Transformation(Document* xsl, Document* xml); 
 		~Transformation();
-		string transform();
-
 	private:
 		Document* xsl;
 		Document* xml;

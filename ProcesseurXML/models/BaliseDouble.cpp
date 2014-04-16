@@ -78,3 +78,20 @@ list<Element*>* BaliseDouble::getElements(){
   return elements;
 }
 
+list<Balise*> BaliseDouble::getElementByName(string name)
+{
+	list<Balise*> balises;
+	for (list<Element *>::iterator it = this->elements->begin(); it != this->elements->end(); it++)
+	{
+		if ( dynamic_cast<Balise*>(*it))
+		{
+			if (((Balise*)(*it))->getNom().compare(name) == 0 )
+			{
+				balises.push_back((Balise*)*it);
+			}		
+		}
+
+	}
+	return balises;
+}
+

@@ -5,6 +5,7 @@
 #include <list>
 #include <map>
 #include "BaliseDouble.h"
+#include "Document.h"
 
 using namespace std;
 
@@ -13,10 +14,11 @@ class Templates
 	public:
 		Templates(BaliseDouble*);
 		~Templates();
-		string Display();
+		void ApplyTemplate(Document * docxml, Document * newdoc);
 		
 	private:
-  		map<string, map<string,BaliseDouble*> > templates;
+  		map<string, BaliseDouble*> templates;
+		
 };
 
 #endif

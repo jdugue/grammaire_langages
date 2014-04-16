@@ -8,22 +8,16 @@ Transformation::Transformation(Document* xsl, Document* xml)
 {
 	this->xsl = xsl;
 	this->xml = xml;
+	
+	
+	Templates templ = Templates((BaliseDouble*)(xsl->getElementByName("stylesheet")));
+	Document* newdoc = new Document();
+	templ.ApplyTemplate(xml, newdoc);
+
 }
 
 Transformation::~Transformation()
 {
 }
 
-string Transformation::transform()
-{
-	if ( xsl != NULL && xml != NULL )
-	{
-		BaliseDouble* stsheet = (BaliseDouble*) xsl->getElementByName(string("stylesheet"));
-		if ( stsheet != NULL )
-		{ 
-			cout << stsheet->Display(4) << endl;
-			Templates t = Templates(stsheet);
-		}
-		
-	} 
-} 
+

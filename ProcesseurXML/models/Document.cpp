@@ -72,6 +72,7 @@ Element* Document::getElementByName(string name)
 		{				
 			if ( ((Balise*)*it)->getNom().compare(name) == 0 )
 			{
+				
 				return *it;
 			}
 		}
