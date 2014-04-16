@@ -28,5 +28,5 @@ class Validation
   	//int validationDocument(Document xml, Document xsd);
   	//int constructionSchema(Document xsd);
 	string constructionExpression(Element* elm,mRegex& mapRegex);
-	bool ValiderXML(Element* elt, map<string,string>& mapreg) const;
+	bool ValiderXML(Element* elt, map<string,string>& mapreg);
 };
