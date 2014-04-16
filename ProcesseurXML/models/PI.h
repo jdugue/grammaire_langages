@@ -10,6 +10,7 @@ class PI: public Element
     ~PI();
     PI(const PI& pi);
     string Display (int indent);
+    virtual string DisplayNoAtts();
 	string getNom();
 	string getNomDomaine();
 	list<Attribut*>* getAtts();

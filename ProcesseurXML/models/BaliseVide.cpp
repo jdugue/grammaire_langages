@@ -46,3 +46,7 @@ string BaliseVide::Display (int indent)
 	return mybalise;
 }
 
+string BaliseVide::DisplayNoAtts()
+{
+	/* Rien à faire */
+}

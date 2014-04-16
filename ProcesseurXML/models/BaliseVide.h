@@ -10,6 +10,7 @@ class BaliseVide: public Balise
     ~BaliseVide();
     BaliseVide (BaliseVide& baliseVide);
     string Display(int indent);
+    virtual string DisplayNoAtts();
 };
 
 #endif

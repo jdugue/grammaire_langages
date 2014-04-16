@@ -32,5 +32,5 @@
       blabla
     </x>
 <![CDATA[Du CDATA qui peut contenir une balise comme ca <balise> !]]>  
-</a>
+	</a>
 </doc>

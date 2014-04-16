@@ -14,7 +14,8 @@ class BaliseDouble: public Balise
 		~BaliseDouble();
 		BaliseDouble (const BaliseDouble& elemBalise);   
 		string Display(int indent);
-	       	list<Element*>* getElements();
+		virtual string DisplayNoAtts();
+	    list<Element*>* getElements();
 
 	private:
 		list<Element *> *elements;

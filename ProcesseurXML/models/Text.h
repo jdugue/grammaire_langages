@@ -10,6 +10,7 @@ class Text: public Element
     ~Text();
     Text(const Text& text);
     string Display(int indent);
+    virtual string DisplayNoAtts();
     int getType();
     string getContenu();
 

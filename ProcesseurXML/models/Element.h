@@ -17,6 +17,7 @@ class Element
     {
     	return string();
     }
+    virtual string DisplayNoAtts() { return ""; }
     virtual ~Element(){}
 };
 

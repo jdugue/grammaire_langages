@@ -1,30 +1,31 @@
-#include<string.h>
-#include"Element.h"
-#include"Commentaire.h"
-#include"Text.h"
-#include"Balise.h"
-#include"PI.h"
-#include"BaliseVide.h"
-#include"BaliseDouble.h"
-#include"Attribut.h"
-#include"Document.h"
-
-#include<map>
+#include <string>
+#include "Element.h"
+#include "Commentaire.h"
+#include "Text.h"
+#include "Balise.h"
+#include "PI.h"
+#include "BaliseVide.h"
+#include "BaliseDouble.h"
+#include "Attribut.h"
+#include "Document.h"
+#include <regex.h>
+#include <map>
 
 typedef string nom;
-typedef string type;
 typedef string regex;
+typedef map<nom,regex> mRegex;
 
 class Validation
 {
   public:
-      Validation();
+  	Validation(Document * docxml, Document * docxsd);
+  	bool IsValid();
       
   private:
-      map<nom, type> mapElm;
-      map<nom, regex> mapType;
-      int validationDocument(Document xml, Document xsd);
-      void constructionSchema(Document xsd);
-	  int constructionExpression(Element* elm);
-      
+  	mRegex mapRegex;
+  	bool isValid;
+  	//int validationDocument(Document xml, Document xsd);
+  	//int constructionSchema(Document xsd);
+	string constructionExpression(Element* elm,mRegex& mapRegex);
+	bool ValiderXML(Element* elt, map<string,string>& mapreg);
 };

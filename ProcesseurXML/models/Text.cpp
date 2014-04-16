@@ -49,3 +49,8 @@ int Text::getType(){
 string Text::getContenu(){
 	return contenu;
 }
+
+string Text::DisplayNoAtts()
+{
+	return contenu;
+}

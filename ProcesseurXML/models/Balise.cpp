@@ -53,4 +53,16 @@ list<Attribut*>* Balise::getAttributs(){
 string Balise::getNomDomaine(){
   return nomDomaine;
 }
+
+Attribut* Balise::getAttribut(const string& name)
+{
+	for (list<Attribut *>::iterator it = this->attributs->begin(); it != this->attributs->end(); it++)
+	{
+		if ((*it)->getNom() == name)
+		{
+			return (*it);
+		}
+	}
+	return NULL;
+}
 	
