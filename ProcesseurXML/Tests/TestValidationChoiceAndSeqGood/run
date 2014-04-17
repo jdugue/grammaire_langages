@@ -1,0 +1,1 @@
+../xmltool -v ../files/choice_and_seq_good.xml ../files/choice_and_seq.xsd

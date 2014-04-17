@@ -1,0 +1,1 @@
+../xmltool -v ../files/personnes3MinOccurs.xml ../files/personnesMinOccurs.xsd
