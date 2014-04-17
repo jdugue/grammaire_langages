@@ -31,7 +31,7 @@ string Creation regex (Element root, map_reg):
 		reg+=")"
 	Sinon,
 		Si type = date :
-			reg += ???
+			reg += reg += "([0-9][0-9][0-9][0-9])-([0-1][0-9])-([0-3][0-9])"
 		Sinon :
 			reg += "[^<&]*"
 			Pour chacun des enfants de root :
@@ -40,3 +40,12 @@ string Creation regex (Element root, map_reg):
 		reg+= "</" + name +">" 
 		mapreg[name]=reg
 	return reg
+
+Validation (docxml,doxsd):
+	Creation regex;
+	Remplacement des references
+	Valider document
+
+Valider document :
+	On met dans une chaine de caractère la racine sans les attributs (tout le document sans les attributs en fait)
+	On test la regex correspondant à la racine sur la chaine de caractère
