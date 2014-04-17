@@ -18,6 +18,7 @@ class BaliseDouble: public Balise
 	    list<Element*>* getElements();
 		list<Balise*> getElementByName(string name);
 		list<Element*>::iterator getItToElementByName(string name);
+		list<Element*>* getCopyOfElements();
 
 	private:
 		list<Element *> *elements;

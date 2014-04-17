@@ -112,3 +112,13 @@ list<Element*>::iterator BaliseDouble::getItToElementByName(string name)
 	return this->elements->end();
 }
 
+list<Element*>* BaliseDouble::getCopyOfElements()
+{
+	list<Element*>* newList = new list<Element*>();
+	for (list<Element*>::iterator it = this->elements->begin(); it != this->elements->end(); it++)
+	{
+		newList->push_back(*it);
+	}
+	return newList;
+}
+

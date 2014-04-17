@@ -88,10 +88,17 @@ void Templates::ApplyTemplateOnNode(list<Element*>* newdocElems)
 					list<Element*>::iterator it = mother->getItToElementByName("apply-templates");
 					if ( it != mother->getElements()->end() )
 					{
-						string nameToFind = ((Balise*)*it)->getValueFromAttribut("select");
-						it = mother->getElements()->erase(it);
-						mother->getElements()->splice(it, *(templates.find(nameToFind)->second->getElements()));
-						ApplyTemplateOnNode(mother->getElements());
+						if (((Balise*)*it)->getAttributs()->size() != 0)
+						{
+							string nameToFind = ((Balise*)*it)->getValueFromAttribut("select");
+							it = mother->getElements()->erase(it);
+							mother->getElements()->splice(it, *(templates.find(nameToFind)->second->getElements()));
+							ApplyTemplateOnNode(mother->getElements());
+						}
+						else
+						{
+							
+						}
 					
 					}
 				}
@@ -132,29 +139,27 @@ void Templates::ApplyTemplateForXml(string baliseName)
 }
 
 
-BaliseDouble* Templates::findElementsXml(string name, BaliseDouble* root )
+BaliseDouble* Templates::findElementsXml(BaliseDouble* root, BaliseDouble* mother)
 {
-	BaliseDouble* mother = root;
-	//Si l'element est dans mother
-	if ( mother->getElementByName(name).size()!= 0 )
+	if ( root->getElements()->size() != 0 )
 	{
-		return mother;
-	}
-	//Sinon on regarde les filsssss
-	for ( list<Element*>::iterator it = mother->getElements()->begin();
-									it != mother->getElements()->end(); it++)
-	{
-		//Mais seulement s'ils sont des BaliseDouble, bien sur
-		if ( dynamic_cast<BaliseDouble*>(*it))
+		for ( list<Element*>::iterator it = root->getElements()->begin();
+									it != root->getElements()->end(); it++)
 		{
-			BaliseDouble* b = findMotherElement(name, (BaliseDouble*)*it);
-			if ( b != NULL )
+			if ( dynamic_cast<BaliseDouble*>(*it))
 			{
-				return b;
+				findElementsXml( (BaliseDouble*)*it, root );
 			}
 		}
-	}	
-	
-	return NULL;
+	}		
 }
+
+void Templates::ApplyTemplatesOnTag(BaliseDouble* mother, string nameToApplyOn)
+{
+	BaliseDouble* templateTag = templ.find(nameToApplyOn)->second;
+	list<Element*>::iterator it = templateTag->getItToElementByName("value-of");
+	
+	
+}
+
 
